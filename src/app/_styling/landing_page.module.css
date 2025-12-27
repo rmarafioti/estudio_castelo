@@ -1,0 +1,11 @@
+.image_container {
+    width: 800px;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+    .image_container {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
