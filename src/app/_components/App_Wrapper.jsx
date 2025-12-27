@@ -1,6 +1,6 @@
 "use client";
 
-import { Outfit } from "next/font/google";
+import { Germania_One } from "next/font/google";
 
 import { useState, useEffect } from "react";
 
@@ -8,9 +8,9 @@ import Navbar from "../_layout/Navbar";
 import Footer from "../_layout/Footer";
 import Access_Menu from "../_components/accessibility/Access_Menu";
 
-const outfit = Outfit({
+const germania_one = Germania_One({
   variable: "--main-font",
-  weight: ["300", "600"],
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -58,7 +58,7 @@ export default function AppWrapper({ children }) {
   };
 
   return (
-    <div>
+    <div className={germania_one.variable}>
       <Navbar />
       <Access_Menu
         accessibility={accessibility}
@@ -72,7 +72,7 @@ export default function AppWrapper({ children }) {
           ${
             accessibility.isRemoveFontStyle
               ? "accessible-font"
-              : outfit.className
+              : germania_one.className
           }
         `}
         style={{
