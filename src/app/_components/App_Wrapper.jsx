@@ -16,24 +16,9 @@ const germania_one = Germania_One({
 
 export default function AppWrapper({ children }) {
   const [accessibility, setAccessibility] = useState({
-    isThemeDark: false,
     isRemoveFontStyle: false,
     fontSizeAdjust: 1,
   });
-
-  useEffect(() => {
-    setAccessibility((prev) => ({
-      ...prev,
-      isThemeDark: window.matchMedia("(prefers-color-scheme: dark)").matches,
-    }));
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      accessibility.isThemeDark ? "dark" : "light"
-    );
-  }, [accessibility.isThemeDark]);
 
   const adjustFontSize = (increment) => {
     setAccessibility((prev) => ({
@@ -51,7 +36,6 @@ export default function AppWrapper({ children }) {
 
   const resetAccessibility = () => {
     setAccessibility({
-      isThemeDark: false,
       isRemoveFontStyle: false,
       fontSizeAdjust: 1,
     });

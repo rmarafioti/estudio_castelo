@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IoAccessibility } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
@@ -37,15 +37,6 @@ export default function AccessMenu({
             </button>
           </div>
           <article className={styles.controls}>
-            <div className={styles.controlSection}>
-              <p className={styles.controlItem}>Theme</p>
-              <div className={styles.controlItem}>
-                <Toggle
-                  onToggle={() => toggleSetting("isThemeDark")}
-                  isToggled={accessibility.isThemeDark}
-                />
-              </div>
-            </div>
             <div className={styles.controlSection}>
               <p className={styles.controlItem}>Remove Font Style</p>
               <div className={styles.controlItem}>
