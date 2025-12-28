@@ -3,8 +3,8 @@ import App_Wrapper from "./_components/App_Wrapper";
 import "./globals.css";
 
 export const metadata = {
-  title: "Frontend Scaffold",
-  description: "Frontend web app starter code",
+  title: "Estúdio Castelo",
+  description: "Tattooing and art by Felip de Sousa",
   icons: {
     icon: "/favicon.svg",
   },
