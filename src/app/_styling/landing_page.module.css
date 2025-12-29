@@ -1,20 +1,24 @@
-.image_container {
+.main {
+  padding-top: 5rem;
   position: relative;
+  min-height: 1000px;
+}
+.image_container {
+  position: absolute;
   align-self: flex-start;
   width: 1200px;
 }
 
-.header {
-  margin-bottom: 0.5rem;
-}
-
 .copy_container {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 8rem;
-  left: 200px;
+  left: 400px;
   width: 400px;
+}
+
+.header {
+  margin-bottom: 0.5rem;
 }
 
 .copy {
@@ -26,8 +30,16 @@
 }
 
 @media (max-width: 800px) {
+  .main {
+    padding-top: 8rem;
+  }
   .image_container {
+    position: static;
     width: 100%;
-    margin-bottom: 1rem;
+  }
+  .copy_container {
+    left: auto;
+    width: 100%;
+    padding: 1rem 1rem 0rem 1rem;
   }
 }

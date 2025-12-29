@@ -8,7 +8,10 @@ import styles from "./_styling/landing_page.module.css";
 
 export default function Home() {
   return (
-    <main>
+    <main className={styles.main}>
+      <div className={styles.image_container}>
+        <Responsive_Image photoData={heroPhoto} />
+      </div>
       <FadeInSection>
         <div className={styles.copy_container}>
           <h1 className={styles.header}>Welcome to Estúdio Castelo</h1>
@@ -27,9 +30,6 @@ export default function Home() {
           </p>
         </div>
       </FadeInSection>
-      <div className={styles.image_container}>
-        <Responsive_Image photoData={heroPhoto} />
-      </div>
     </main>
   );
 }
