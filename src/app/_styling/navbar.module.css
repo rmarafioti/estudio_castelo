@@ -18,7 +18,7 @@
   text-decoration: none;
 }
 
-.nav_link:hover {
+.active_link {
   background: rgba(211, 211, 211, 0.5);
   border-bottom: none;
 }
