@@ -86,7 +86,7 @@ footer {
   display: flex;
   justify-content: center;
   padding: 2rem 0rem 2rem 0rem;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid gray;
 }
 
 main {
@@ -115,6 +115,7 @@ section.visible {
 
 @media (max-width: 800px) {
   section {
+    padding-top: 0rem;
     width: 100%;
   }
 }
@@ -148,6 +149,8 @@ button {
 @media (max-width: 667px) {
   nav {
     border-bottom: none;
+    padding: 1rem 0rem 1rem 0rem;
+    width: 100%;
   }
   footer {
     width: 100%;
@@ -155,11 +158,15 @@ button {
   }
   main {
     width: 100%;
-    padding: 2rem 1rem 6rem 1rem;
+    padding: 2rem 0rem 6rem 0rem;
   }
   form {
     width: 100%;
   }
+  h1 {
+  font-size: 2.5em;
+  margin-bottom: 2rem;
+}
 }
 
 @media (prefers-color-scheme: dark) {

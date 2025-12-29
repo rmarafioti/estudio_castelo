@@ -6,8 +6,8 @@ export const heroPhoto = {
     width: 1249,
   },
   mobile: {
-    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1766331102/frontend_scaffold/mobile_view_sh76yr.png",
-    height: 632,
-    width: 426,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1766964450/estudio_castelo/hero_section_mobile_qru1zj.png",
+    height: 1080,
+    width: 1275,
   },
 };

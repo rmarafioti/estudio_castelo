@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* mobile navigation menu below */}
         <div className={pc.mobile_nav}>
           <Link href="/" className={pc.nav_link}>
-            Home
+            Estúdio Castelo
           </Link>
           {/*hamburger menu*/}
           <div id={mobile.hamMenuContainer} onClick={toggleMenu}>

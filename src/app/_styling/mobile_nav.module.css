@@ -64,10 +64,12 @@
 }
 
 .nav_link {
+  font-family: var(--main-font);
+  letter-spacing: 1.2px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
   padding: 1.5rem;
   margin: 0rem 0.5rem 0rem 0.5rem;
-  border-bottom: 1px solid lightgray;
+  
 }
