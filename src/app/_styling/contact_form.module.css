@@ -43,22 +43,6 @@
   padding-bottom: 0.5rem;
 }
 
-/* dark mode stylings */
-@media (prefers-color-scheme: dark) {
-  .name,
-  .email,
-  .message {
-    background-color: var(--dm_background);
-  }
-  .send {
-    color: var(--background);
-  }
-}
-
-[data-theme="dark"] :is(.name, .email, .message) {
-  background-color: var(--dm_background);
-}
-
 @media (max-width: 667px) and (hover: none) {
   .header {
     margin-top: 1rem;

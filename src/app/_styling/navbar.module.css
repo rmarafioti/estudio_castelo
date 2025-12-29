@@ -69,23 +69,3 @@
     border-top: 1px solid gray;
   }
 }
-
-/* dark mode stylings */
-@media (prefers-color-scheme: dark) {
-  .nav_link:hover {
-    color: var(--foreground);
-    background: var(--dm_background);
-  }
-  .mobile_nav {
-    background-color: var(--dm_background);
-  }
-}
-
-[data-theme="dark"] .nav_link:hover {
-  color: var(--foreground);
-  background: var(--dm_background);
-}
-
-[data-theme="dark"] .mobile_nav {
-  background-color: var(--dm_background);
-}
