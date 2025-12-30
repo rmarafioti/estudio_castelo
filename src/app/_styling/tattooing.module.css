@@ -12,11 +12,16 @@
   overflow: hidden;
 }
 
+.tattooing_header_container,
 .tattooing_copy_container {
   position: absolute;
-  bottom: 80px;
+  bottom: 420px;
   left: 140px;
   width: 460px;
+}
+
+.tattooing_copy_container {
+  bottom: 80px;
 }
 
 .copy {
@@ -26,10 +31,9 @@
 }
 
 @media (max-width: 1200px) {
-
   .tattooing_header_section,
   .tattooing_image_container,
-  .tattooing_copy_container {
+  .tattooing_header_container, .tattooing_copy_container {
     width: 100%;
   }
 
@@ -37,14 +41,21 @@
     flex-direction: column;
   }
 
-   .tattooing_copy_container {
+  .tattooing_header_container {
     position: relative;
     top: -800px;
     left: auto;
     padding: 1rem 1rem 0rem 1rem;
   }
 
+  .tattooing_copy_container {
+    position: relative;
+    top: -300px;
+    left: auto;
+    padding: 1rem 1rem 0rem 1rem;
+  }
+
   .header {
-    margin-bottom: 30rem;
+    margin-bottom: 0rem;
   }
 }

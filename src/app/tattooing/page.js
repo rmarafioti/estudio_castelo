@@ -13,8 +13,10 @@ export default function Tattooing() {
         <div className={styles.tattooing_image_container}>
           <Responsive_Image photoData={tattooHeaderBackground} />
         </div>
-        <FadeInSection className={styles.tattooing_copy_container}>
+        <FadeInSection className={styles.tattooing_header_container}>
           <h1 className={styles.header}>Tattooing</h1>
+        </FadeInSection>
+        <FadeInSection className={styles.tattooing_copy_container}>
           <p className={styles.copy}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             feugiat pulvinar nisl sed viverra. Proin dapibus sed metus sit amet
