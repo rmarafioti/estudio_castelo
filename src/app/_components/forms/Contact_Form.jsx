@@ -91,12 +91,14 @@ export default function Contact_Form() {
   };
 
   return (
-    <article>
-      <h3 className={styles.header}>Form</h3>
-      <p className={styles.sub_header}>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet
-        consectetur adipiscing elit quisque faucibus.
-      </p>
+    <article className={styles.form_section}>
+      <div className={styles.header_section}>
+        <h3 className={styles.header}>Get in touch</h3>
+        <p className={styles.sub_header}>
+          Fill out the form below to request tattoo appointments, inquire about
+          art comissions, purchases or any general questions.
+        </p>
+      </div>
       <form ref={formRef} onSubmit={sendEmail}>
         <label className={styles.label}>Full name*</label>
         <input

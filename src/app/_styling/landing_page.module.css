@@ -1,45 +1,195 @@
-.main {
-  padding-top: 5rem;
+.hero_section {
   position: relative;
-  min-height: 1000px;
-}
-.image_container {
-  position: absolute;
-  align-self: flex-start;
-  width: 1200px;
+  margin-top: 6rem;
+  width: 100%;
 }
 
-.copy_container {
+.hero_image_container {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  left: 400px;
+  width: 1100px;
+}
+
+.hero_copy_container {
+  position: absolute;
+  top: 160px;
+  left: 800px;
   width: 400px;
 }
 
-.header {
-  margin-bottom: 0.5rem;
+.review_section {
+  position: relative;
+  margin-top: 4rem;
+  width: 100%;
 }
 
-.copy {
+.review_image_container {
+  position: relative;
+  width: 1400px;
+  overflow: hidden;
+}
+
+.review_copy_container {
+  position: absolute;
+  bottom: 420px;
+  left: 80px;
+  width: 1200px;
+}
+
+.header,
+.header_review {
+  margin-bottom: 0.5rem;
+  width: 400px;
+}
+
+.header_review {
+  width: 460px;
+}
+
+.copy,
+.review_copy,
+.note {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   line-height: 28px;
 }
 
-@media (max-width: 800px) {
-  .main {
-    padding-top: 8rem;
+.review_copy {
+  margin-bottom: 2rem;
+}
+
+.note {
+  color: lightgray;
+}
+
+.review_cards {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  display: flex;
+  width: 1200px;
+  height: 326px;
+  overflow: hidden;
+}
+
+.review_card {
+  color: rgb(211, 211, 211, 0.6);
+  width: 260px;
+  padding: 1rem;
+  border-radius: 5px;
+  background: rgba(5, 5, 5, 0.2);
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.review_card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.review_card::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media (hover: hover) {
+  .review_card:hover {
+    color: rgb(211, 211, 211);
+    background: rgba(5, 5, 5, 1);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(128, 128, 128, 0.4) transparent;
+    cursor: pointer;
   }
-  .image_container {
+}
+
+.review_card:hover::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.4); /* Show on hover in Chrome */
+}
+
+.review_card:first-child {
+  margin-left: 0rem;
+}
+
+.name {
+  margin: 1rem 0rem 0.5rem 0rem;
+}
+
+@media (max-width: 1200px) {
+
+  .hero_image_container,
+  .hero_copy_container,
+  .header_review,
+  .review_image_container,
+  .review_copy_container,
+  .header,
+  .review_cards,
+  .review_card {
+    width: 100%;
+  }
+
+  .hero_section {
     position: static;
-    width: 100%;
   }
-  .copy_container {
+
+  .review_section {
+    margin-top: 1rem;
+  }
+
+  .review_image_container {
+    margin-top: 4rem;
+    top: 180px;
+    margin-bottom: -580px;
+  }
+
+  .hero_copy_container {
+    position: static;
+    top: auto;
     left: auto;
-    width: 100%;
     padding: 1rem 1rem 0rem 1rem;
+  }
+
+  .review_copy_container {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+
+  .header_review {
+    margin-bottom: 18rem;
+  }
+
+  .review_copy {
+    margin-bottom: 1rem;
+  }
+
+  .review_cards {
+    display: block;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0.5rem;
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: rgba(128, 128, 128, 0.4) transparent;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .review_card {
+    color: rgb(211, 211, 211);
+    height: auto;
+    margin: 2rem 0rem 0rem 0rem;
+    padding: 0rem 0rem 2rem 0rem;
+    overflow: visible;
+    border-bottom: 1px solid gray;
+  }
+
+  .review_card:first-child {
+    margin-top: 1rem;
+  }
+
+  .review_card:last-child {
+    border-bottom: none;
   }
 }
