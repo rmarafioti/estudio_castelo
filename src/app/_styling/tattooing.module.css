@@ -1,0 +1,50 @@
+.tattooing_header_section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+  width: 100%;
+}
+
+.tattooing_image_container {
+  position: relative;
+  width: 1000px;
+  overflow: hidden;
+}
+
+.tattooing_copy_container {
+  position: absolute;
+  bottom: 80px;
+  left: 140px;
+  width: 460px;
+}
+
+.copy {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1200px) {
+
+  .tattooing_header_section,
+  .tattooing_image_container,
+  .tattooing_copy_container {
+    width: 100%;
+  }
+
+  .tattooing_header_section {
+    flex-direction: column;
+  }
+
+   .tattooing_copy_container {
+    position: relative;
+    top: -800px;
+    left: auto;
+    padding: 1rem 1rem 0rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 30rem;
+  }
+}

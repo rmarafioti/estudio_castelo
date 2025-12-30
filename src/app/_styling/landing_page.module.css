@@ -115,9 +115,6 @@
 }
 
 @media (max-width: 1200px) {
-  .main {
-    padding-top: 8rem;
-  }
 
   .hero_image_container,
   .hero_copy_container,
