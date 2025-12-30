@@ -56,8 +56,10 @@ export default function Home() {
           <h2 className={styles.header_review}>
             Professional tattooing & customer service
           </h2>
-          <p className={styles.copy}>Read what clients are saying</p>
-          <p className={styles.note}>*hover & scroll to read full review</p>
+          <p className={styles.review_copy}>
+            Read what clients are saying
+            <em className={styles.note}> *hover & scroll to read reviews</em>
+          </p>
           <div className={styles.review_cards}>
             {reviews.map((review, index) => (
               <Review_Card
