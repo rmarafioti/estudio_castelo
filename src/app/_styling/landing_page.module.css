@@ -1,32 +1,105 @@
-.main {
-  padding-top: 5rem;
+.hero_section {
   position: relative;
-  min-height: 1000px;
+  margin-top: 6rem;
+  width: 100%;
 }
-.image_container {
-  position: absolute;
-  align-self: flex-start;
+
+.hero_image_container {
+  position: relative;
   width: 1200px;
 }
 
-.copy_container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  left: 400px;
+.hero_copy_container {
+  position: absolute;
+  top: 160px;
+  left: 800px;
   width: 400px;
 }
 
-.header {
-  margin-bottom: 0.5rem;
+.review_section {
+  position: relative;
+  margin-top: -2rem;
+  width: 100%;
 }
 
-.copy {
+.review_image_container {
+  position: relative;
+  width: 100%;
+}
+
+.review_copy_container {
+  position: absolute;
+  bottom: 460px; /* Use bottom instead of negative top */
+  left: 40px;
+}
+
+.header,
+.header_review {
+  margin-bottom: 0.5rem;
+  width: 400px;
+}
+
+.header_review {
+  width: 460px;
+}
+
+.copy,
+.note {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   line-height: 28px;
+}
+
+.note {
+  color: lightgray;
+  margin-bottom: 1rem;
+}
+
+.review_cards {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  display: flex;
+  width: 1200px;
+  height: 326px;
+  overflow: hidden;
+}
+
+.review_card {
+  color: lightgray;
+  width: 260px;
+  padding: 1rem;
+  border-radius: 5px;
+  background: rgba(5, 5, 5, 0.4);
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: thin; /* Shows thin scrollbar on hover in Firefox */
+  scrollbar-color: rgba(128, 128, 128, 0.4) transparent;
+}
+
+.review_card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.review_card:hover {
+  background: rgba(5, 5, 5, 1);
+  cursor: pointer;
+}
+
+.review_card:first-child {
+  margin-left: 0rem;
+}
+
+.name {
+  margin: 1rem 0rem 0.5rem 0rem;
+}
+
+.review {
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 800px) {
