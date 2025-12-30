@@ -32,13 +32,9 @@ h1 {
   margin-bottom: 2rem;
 }
 
-h2 {
+h2, h3 {
   font-size: 2.5em;
   margin-bottom: 2rem;
-}
-
-h3 {
-  font-size: 2em;
 }
 
 p,

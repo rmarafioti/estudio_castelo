@@ -2,7 +2,7 @@
 
 import FadeInSection from "../_components/Fade_In_Section";
 
-export default function Feature_One() {
+export default function Tattooing() {
   return (
     <main>
       <FadeInSection>

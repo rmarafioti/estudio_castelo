@@ -1,9 +1,27 @@
+.form_section {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_section {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
 .header {
+  font-family: var(--main-font);
   margin-bottom: 0.5rem;
 }
 
 .sub_header {
-  margin-bottom: 1rem;
+  color: lightgray;
+  margin-bottom: 2rem;
 }
 
 .name,
@@ -50,13 +68,18 @@
   .sub_header {
     margin-bottom: 1rem;
   }
-  .name,
-  .email,
-  .message,
-  .send,
-  .sub_header,
-  .form {
+
+  .form_section, .header_section {
     width: 100%;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+
+  .form_section {
+    margin-top: 3rem;
+  }
+
+  .header_section {
+    padding: 0rem;
   }
   .send {
     text-align: center;

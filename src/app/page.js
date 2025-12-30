@@ -2,6 +2,7 @@
 
 import { heroPhoto, reviewSectionBackground } from "./_data/photos";
 import { reviews } from "./_data/copy";
+import Contact_Form from "./_components/forms/Contact_Form";
 import FadeInSection from "./_components/Fade_In_Section";
 import Responsive_Image from "./_components/Responsive_image";
 import { IoStarSharp } from "react-icons/io5";
@@ -48,6 +49,9 @@ export default function Home() {
           </p>
         </FadeInSection>
       </article>
+      <FadeInSection>
+        <Contact_Form />
+      </FadeInSection>
       <article className={styles.review_section}>
         <div className={styles.review_image_container}>
           <Responsive_Image photoData={reviewSectionBackground} />

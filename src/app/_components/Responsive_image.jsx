@@ -28,7 +28,7 @@ export default function Responsive_Image({ photoData }) {
 
   return (
     <picture>
-      <source media="(max-width: 800px)" srcSet={mobileSrcSet} />
+      <source media="(max-width: 1200px)" srcSet={mobileSrcSet} />
       <img {...desktopProps} className={styles.image} />
     </picture>
   );
