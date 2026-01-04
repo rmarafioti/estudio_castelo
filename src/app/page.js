@@ -1,9 +1,15 @@
 "use client";
 
-import { heroPhoto, reviewSectionBackground } from "./_data/photos";
+import {
+  heroPhoto,
+  reviewSectionBackground,
+  landingPageBioPhoto,
+  landingPageTattooPhoto,
+} from "./_data/photos";
 import { reviews } from "./_data/copy";
 import FadeInSection from "./_components/Fade_In_Section";
 import Responsive_Image from "./_components/Responsive_image";
+import Image from "next/image";
 import { IoStarSharp } from "react-icons/io5";
 
 import styles from "./_styling/landing_page.module.css";
@@ -48,6 +54,26 @@ export default function Home() {
           </p>
         </FadeInSection>
       </article>
+      <div>
+        <div>
+          <Image
+            src={landingPageTattooPhoto.src}
+            alt={landingPageTattooPhoto.alt}
+            height={landingPageTattooPhoto.height}
+            width={landingPageTattooPhoto.width}
+          />
+          <h2>Tattooing</h2>
+          <p>View Felipe's porfolio</p>
+        </div>
+        <Image
+          src={landingPageBioPhoto.src}
+          alt={landingPageBioPhoto.alt}
+          height={landingPageBioPhoto.height}
+          width={landingPageBioPhoto.width}
+        />
+        <h2>About</h2>
+        <p>Get to know Felipe</p>
+      </div>
       <article className={styles.review_section}>
         <div className={styles.review_image_container}>
           <Responsive_Image photoData={reviewSectionBackground} />

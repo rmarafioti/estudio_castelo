@@ -18,16 +18,9 @@ export default function Tattooing() {
         </FadeInSection>
         <FadeInSection className={styles.tattooing_copy_container}>
           <p className={styles.copy}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            feugiat pulvinar nisl sed viverra. Proin dapibus sed metus sit amet
-            rhoncus. Nam ante felis, tempus vitae leo vel, interdum ultrices
-            ipsum. Nullam tincidunt orci massa, et commodo lectus vulputate
-            quis. Maecenas eu suscipit diam. Cras porta eros eros, in vehicula
-            ipsum dignissim porta. Vestibulum imperdiet massa ut augue blandit,
-            in vestibulum nisl mollis. Ut justo massa, ultrices ullamcorper
-            imperdiet bibendum, dapibus sit amet urna. Sed eleifend velit vel
-            malesuada cursus. Etiam dapibus nunc lacus, et dignissim augue
-            interdum at.
+            Felipe is an award-winning tattoo artist, mostly inspired by nature
+            and classic tattoo imagery. He has experience in a range of tattoo
+            styles and is currently focused on black and gray tattoos.
           </p>
         </FadeInSection>
       </article>
