@@ -1,3 +1,10 @@
+export const logo = {
+  alt: "...",
+  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1767536012/estudio_castelo/eclogo_fnqa48.jpg",
+  height: 1025,
+  width: 1021,
+};
+
 export const heroPhoto = {
   alt: "...",
   desktop: {

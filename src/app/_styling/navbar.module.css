@@ -1,3 +1,9 @@
+.logo {
+  width: 80px;
+  height: auto;
+  filter: invert(1);
+}
+
 .link_container {
   width: 100%;
   display: flex;

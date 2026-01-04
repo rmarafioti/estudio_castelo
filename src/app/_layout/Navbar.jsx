@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { logo } from "../_data/photos";
+import Image from "next/image";
 import Link from "next/link";
 
 /* naming conventions to define responsive design*/
@@ -23,7 +25,6 @@ export default function Navbar() {
   };
 
   const links = [
-    { href: "/", label: "Home" },
     { href: "/tattooing", label: "Tattooing" },
     { href: "/about", label: "About" },
     { href: "/featureThree", label: "Contact" },
@@ -33,6 +34,15 @@ export default function Navbar() {
     <>
       <nav>
         <div className={pc.link_container}>
+          <Link href="/">
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              height={logo.height}
+              width={logo.width}
+              className={pc.logo}
+            />
+          </Link>
           {links
             .filter((link) => link.href)
             .map(({ href, label }) => (
