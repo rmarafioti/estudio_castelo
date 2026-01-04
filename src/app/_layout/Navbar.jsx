@@ -24,10 +24,21 @@ export default function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
+  const scrollToContact = () => {
+    setTimeout(() => {
+      const contactSection = document.getElementById("contactform");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        console.warn("Contact form section not found");
+      }
+    }, 200);
+  };
+
   const links = [
     { href: "/tattooing", label: "Tattooing" },
     { href: "/about", label: "About" },
-    { href: "/featureThree", label: "Contact" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -60,8 +71,14 @@ export default function Navbar() {
 
         {/* mobile navigation menu below */}
         <div className={pc.mobile_nav}>
-          <Link href="/" className={pc.nav_link}>
-            Estúdio Castelo
+          <Link href="/">
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              height={logo.height}
+              width={logo.width}
+              className={mobile.logo}
+            />
           </Link>
           {/*hamburger menu*/}
           <div id={mobile.hamMenuContainer} onClick={toggleMenu}>

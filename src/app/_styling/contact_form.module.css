@@ -1,16 +1,9 @@
-.form_section {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
+.contact_header_section {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-.header_section {
-  display: flex;
-  flex-direction: column;
+  margin-top: 10rem;
   width: 600px;
 }
 
@@ -20,8 +13,18 @@
 }
 
 .sub_header {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   color: lightgray;
   margin-bottom: 2rem;
+}
+
+.form_section {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
 }
 
 .name,
