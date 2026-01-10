@@ -10,7 +10,8 @@
   display: flex;
 }
 
-.gallery_button {
+.gallery_button_left,
+.gallery_button_right {
   background-color: transparent;
   cursor: pointer;
   align-self: center;
@@ -19,7 +20,7 @@
 
 .icon {
   font-size: 40px;
-  color: var(--foreground);
+  color: rgba(252, 251, 251, 0.5);
 }
 
 .photo {
@@ -31,9 +32,9 @@
 .zoom_overlay {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: fixed;
-  width: 900px;
+  width: 800px;
   height: auto;
   background: var(--dm_background);
   z-index: 1000;
@@ -43,20 +44,19 @@
 }
 
 .zoomed_photo {
-  width: 60%;
+  width: 80%;
   height: auto;
   cursor: default;
+  margin-left: 6rem;
 }
 
 .close_button {
-  position: fixed;
-  top: 0px;
-  right: -30px;
   background: transparent;
   border: none;
-  color: white;
+  color: rgba(252, 251, 251, 0.5);
   font-size: 3rem;
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 .indicator_section {
@@ -78,4 +78,43 @@
 
 .indicator.active {
   color: #98969c;
+}
+
+@media (max-width: 1200px) {
+  .photo {
+    pointer-events: none;
+    width: 100%;
+  }
+
+  .gallery,
+  .navigate_section {
+    width: 100%;
+  }
+
+  .indicator_section {
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .indicator {
+    font-size: 10px;
+  }
+
+  .gallery_button_left,
+  .gallery_button_right {
+    position: fixed;
+    background-color: transparent;
+    cursor: pointer;
+    align-self: center;
+    border-radius: 0px;
+    width: 60px;
+  }
+
+  .gallery_button_left {
+    left: 0;
+  }
+  .gallery_button_right {
+    right: 0;
+  }
 }

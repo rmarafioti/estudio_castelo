@@ -54,7 +54,7 @@ export default function Home() {
           </p>
         </FadeInSection>
       </article>
-      <div>
+      {/*<div>
         <div>
           <Image
             src={landingPageTattooPhoto.src}
@@ -73,7 +73,7 @@ export default function Home() {
         />
         <h2>About</h2>
         <p>Get to know Felipe</p>
-      </div>
+      </div>*/}
       <article className={styles.review_section}>
         <div className={styles.review_image_container}>
           <Responsive_Image photoData={reviewSectionBackground} />

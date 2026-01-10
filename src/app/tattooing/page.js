@@ -30,14 +30,17 @@ export default function Tattooing() {
           </p>
         </FadeInSection>
       </article>
-      <FadeInSection className={styles.tattoo_gallery}>
-        <Gallery
-          onNext={handleNext}
-          onPrev={handlePrev}
-          currentIndex={currentIndex}
-          currentImageObj={currentImageObj}
-          photos={photos}
-        />
+      <FadeInSection className={styles.gallery_section}>
+        <em className={styles.gallery_message}>*Click on photo to zoom in</em>
+        <div className={styles.tattoo_gallery}>
+          <Gallery
+            onNext={handleNext}
+            onPrev={handlePrev}
+            currentIndex={currentIndex}
+            currentImageObj={currentImageObj}
+            photos={photos}
+          />
+        </div>
       </FadeInSection>
     </main>
   );

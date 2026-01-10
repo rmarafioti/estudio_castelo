@@ -7,6 +7,7 @@ import Image from "next/image";
 import { IoChevronForwardCircle } from "react-icons/io5";
 import { IoChevronBackCircle } from "react-icons/io5";
 import { FaCircle } from "react-icons/fa6";
+import { IoCloseCircle } from "react-icons/io5";
 
 import styles from "../_styling/gallery.module.css";
 
@@ -18,6 +19,27 @@ export default function Gallery({
   photos,
 }) {
   const [isZoomed, setIsZoomed] = useState(false);
+
+  function Zoomed_Gallery() {
+    return (
+      <div className={styles.zoom_overlay} onClick={() => setIsZoomed(false)}>
+        <Image
+          src={currentImageObj.src}
+          alt={currentImageObj.alt}
+          width={currentImageObj.width}
+          height={currentImageObj.height}
+          className={styles.zoomed_photo}
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
+        />
+        <button
+          className={styles.close_button}
+          onClick={() => setIsZoomed(false)}
+        >
+          <IoCloseCircle />
+        </button>
+      </div>
+    );
+  }
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -34,9 +56,13 @@ export default function Gallery({
 
   return (
     <div className={styles.gallery}>
-      <div className={styles.navigate_section}>
+      <div
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
+        className={styles.navigate_section}
+      >
         <button
-          className={styles.gallery_button}
+          className={styles.gallery_button_left}
           onClick={onPrev}
           aria-label="previous photo"
         >
@@ -52,7 +78,7 @@ export default function Gallery({
           priority
         />
         <button
-          className={styles.gallery_button}
+          className={styles.gallery_button_right}
           onClick={onNext}
           aria-label="next photo"
         >
@@ -60,25 +86,7 @@ export default function Gallery({
         </button>
       </div>
 
-      {/* Zoomed overlay */}
-      {isZoomed && (
-        <div className={styles.zoom_overlay} onClick={() => setIsZoomed(false)}>
-          <Image
-            src={currentImageObj.src}
-            alt={currentImageObj.alt}
-            width={currentImageObj.width}
-            height={currentImageObj.height}
-            className={styles.zoomed_photo}
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
-          />
-          <button
-            className={styles.close_button}
-            onClick={() => setIsZoomed(false)}
-          >
-            ✕
-          </button>
-        </div>
-      )}
+      {isZoomed && <Zoomed_Gallery />}
 
       <div className={styles.indicator_section}>
         <div className={styles.indicators}>
