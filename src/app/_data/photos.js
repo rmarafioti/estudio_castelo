@@ -1,3 +1,10 @@
+export const logo = {
+  alt: "...",
+  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1767536012/estudio_castelo/eclogo_fnqa48.jpg",
+  height: 1025,
+  width: 1021,
+};
+
 export const heroPhoto = {
   alt: "...",
   desktop: {
@@ -10,6 +17,20 @@ export const heroPhoto = {
     height: 1080,
     width: 1275,
   },
+};
+
+export const landingPageTattooPhoto = {
+  alt: "...",
+  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1767568786/estudio_castelo/landing_page_tattooing_image_bxlpfx.png",
+  height: 406,
+  width: 608,
+};
+
+export const landingPageBioPhoto = {
+  alt: "...",
+  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1767568713/estudio_castelo/landing_page_bio_image_ffrd0j.png",
+  height: 406,
+  width: 608,
 };
 
 export const reviewSectionBackground = {

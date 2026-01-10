@@ -5,9 +5,6 @@ import "./globals.css";
 export const metadata = {
   title: "Estúdio Castelo",
   description: "Tattooing and art by Felip de Sousa",
-  icons: {
-    icon: "/favicon.svg",
-  },
 };
 
 export default function RootLayout({ children }) {

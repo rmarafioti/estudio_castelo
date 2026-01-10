@@ -2,11 +2,17 @@
 
 import FadeInSection from "../_components/Fade_In_Section";
 import Responsive_Image from "../_components/Responsive_image";
+import usePhotoGallery from "../_hooks/usePhotoGallery";
+import Gallery from "../_components/Gallery";
 import { tattooHeaderBackground } from "../_data/photos";
+import { tattooPhotos } from "../_data/tattooGallery";
 
 import styles from "../_styling/tattooing.module.css";
 
 export default function Tattooing() {
+  const { handleNext, handlePrev, currentImageObj, currentIndex, photos } =
+    usePhotoGallery(tattooPhotos);
+
   return (
     <main>
       <article className={styles.tattooing_header_section}>
@@ -18,19 +24,24 @@ export default function Tattooing() {
         </FadeInSection>
         <FadeInSection className={styles.tattooing_copy_container}>
           <p className={styles.copy}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            feugiat pulvinar nisl sed viverra. Proin dapibus sed metus sit amet
-            rhoncus. Nam ante felis, tempus vitae leo vel, interdum ultrices
-            ipsum. Nullam tincidunt orci massa, et commodo lectus vulputate
-            quis. Maecenas eu suscipit diam. Cras porta eros eros, in vehicula
-            ipsum dignissim porta. Vestibulum imperdiet massa ut augue blandit,
-            in vestibulum nisl mollis. Ut justo massa, ultrices ullamcorper
-            imperdiet bibendum, dapibus sit amet urna. Sed eleifend velit vel
-            malesuada cursus. Etiam dapibus nunc lacus, et dignissim augue
-            interdum at.
+            Felipe is an award-winning tattoo artist, mostly inspired by nature
+            and classic tattoo imagery. He has experience in a range of tattoo
+            styles and is currently focused on black and gray tattoos.
           </p>
         </FadeInSection>
       </article>
+      <FadeInSection className={styles.gallery_section}>
+        <em className={styles.gallery_message}>*Click on photo to zoom in</em>
+        <div className={styles.tattoo_gallery}>
+          <Gallery
+            onNext={handleNext}
+            onPrev={handlePrev}
+            currentIndex={currentIndex}
+            currentImageObj={currentImageObj}
+            photos={photos}
+          />
+        </div>
+      </FadeInSection>
     </main>
   );
 }
