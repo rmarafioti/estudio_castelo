@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <main>
       <FadeInSection className={styles.contact_header_section}>
-        <h1>Get in touch</h1>
+        <h1 className={styles.header}>Get in touch</h1>
         <p className={styles.sub_header}>
           Fill out the form below to request tattoo appointments, inquire about
           art comissions, purchases or any general questions.

@@ -65,11 +65,16 @@
 }
 
 @media (max-width: 667px) and (hover: none) {
+  .contact_header_section {
+    margin-top: 6rem;
+    width: 100%;
+  }
   .header {
-    margin-top: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
   }
   .sub_header {
     margin-bottom: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
   }
 
   .form_section, .header_section {
