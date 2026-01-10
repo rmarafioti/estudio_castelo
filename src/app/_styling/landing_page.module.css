@@ -173,6 +173,7 @@
     scrollbar-width: thin; /* Thin scrollbar for Firefox */
     scrollbar-color: rgba(128, 128, 128, 0.4) transparent;
     border: 1px solid gray;
+    background-color: black;
     border-radius: 5px;
   }
 

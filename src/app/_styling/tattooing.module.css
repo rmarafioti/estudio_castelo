@@ -2,14 +2,13 @@
   position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 6rem;
+  margin-top: 8rem;
   width: 100%;
 }
 
 .tattooing_image_container {
   position: relative;
   width: 1000px;
-  overflow: hidden;
 }
 
 .tattooing_header_container,
@@ -30,15 +29,24 @@
   letter-spacing: 1px;
 }
 
+.tattoo_gallery {
+  background-color: #1d1b20;
+  height: 540px;
+  width: 800px;
+}
+
 @media (max-width: 1200px) {
   .tattooing_header_section,
   .tattooing_image_container,
-  .tattooing_header_container, .tattooing_copy_container {
+  .tattooing_header_container,
+  .tattooing_copy_container,
+  .tattoo_gallery {
     width: 100%;
   }
 
   .tattooing_header_section {
     flex-direction: column;
+    margin-bottom: 0;
   }
 
   .tattooing_header_container {
@@ -57,5 +65,14 @@
 
   .header {
     margin-bottom: 0rem;
+  }
+
+  .tattooing_header_container,
+  .tattooing_copy_container {
+    bottom: auto;
+  }
+
+  .tattooing_copy_container {
+    top: -80px; /* Reduce top spacing for mobile */
   }
 }
