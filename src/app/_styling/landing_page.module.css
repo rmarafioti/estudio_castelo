@@ -156,7 +156,7 @@
   }
 
   .header_review {
-    margin-top: -62rem;
+    margin-top: -64rem;
     margin-bottom: 18rem;
   }
 
@@ -167,7 +167,7 @@
   .review_cards {
     display: block;
     flex-direction: column;
-    height: 320px;
+    height: 340px;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 0.5rem;
