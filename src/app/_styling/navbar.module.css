@@ -1,7 +1,6 @@
 .logo {
   width: 80px;
   height: auto;
-  filter: invert(1);
 }
 
 .link_container {
@@ -61,7 +60,7 @@
   /* mobile menu */
 
   .menu {
-    top: 99px;
+    top: 96px;
     width: 100%;
   }
 

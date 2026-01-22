@@ -26,7 +26,7 @@ export default function Form_Modal({ isOpen, closeModal, children }) {
       tabIndex={0}
     >
       <div className={styles.success_modal}>
-        <section className={styles.copy_section}>
+        <div className={styles.copy_section}>
           <div>
             <h2 className={styles.heading}>Message Sent!</h2>
             <p className={styles.message}>We will be in touch soon.</p>
@@ -38,14 +38,7 @@ export default function Form_Modal({ isOpen, closeModal, children }) {
               aria-label="close modal button"
             />
           </div>
-        </section>
-        <Image
-          src={formPhoto.src}
-          alt={formPhoto.alt}
-          width={formPhoto.width}
-          height={formPhoto.height}
-          className={styles.form_photo}
-        />
+        </div>
       </div>
       <div className={styles.modalContent}>{children}</div>
     </div>

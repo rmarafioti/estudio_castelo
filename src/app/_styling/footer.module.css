@@ -6,10 +6,15 @@
 .logo {
   width: 120px;
   height: auto;
-  filter: invert(1);
   margin-right: 1rem;
 }
 
 .copyright {
   margin: 0rem 0rem 1rem 1rem;
+}
+
+@media (max-width: 667px) {
+  .logo {
+    width: 80px;
+  }
 }
