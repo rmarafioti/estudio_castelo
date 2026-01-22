@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-/*import Form_Modal from "./Form_Modal";*/
+import Form_Modal from "./Form_Modal";
 import useModal from "../../_hooks/useModal";
 
 import styles from "../../_styling/contact_form.module.css";
@@ -143,7 +143,7 @@ export default function Contact_Form() {
           </p>
         )}
       </form>
-      {/*<Form_Modal isOpen={isOpen} closeModal={closeModal} />*/}
+      <Form_Modal isOpen={isOpen} closeModal={closeModal} />
     </article>
   );
 }
