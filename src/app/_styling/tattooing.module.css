@@ -77,14 +77,15 @@
   }
 
   .gallery_message {
-    margin-left: 1rem;
+    display: none;
   }
   .gallery_section {
     margin-bottom: 8rem;
   }
   .tattoo_gallery {
     width: 100%;
-    height: auto
+    height: auto;
+    margin-top: 0rem;
   }
 }
 

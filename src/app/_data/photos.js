@@ -1,6 +1,6 @@
 export const logo = {
   alt: "...",
-  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1767536012/estudio_castelo/eclogo_fnqa48.jpg",
+  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1769042101/estudio_castelo/logowhiteonblack_cvg8f3.jpg",
   height: 1025,
   width: 1021,
 };
