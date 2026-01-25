@@ -36,10 +36,6 @@
   width: 800px;
 }
 
-.gallery_section {
-  margin-bottom: 4rem;
-}
-
 @media (max-width: 1200px) {
   .tattooing_header_section,
   .tattooing_image_container,
@@ -67,10 +63,6 @@
     padding: 1rem 1rem 0rem 1rem;
   }
 
-  .header {
-    margin-bottom: 0rem;
-  }
-
   .tattooing_header_container,
   .tattooing_copy_container {
     bottom: auto;
@@ -79,9 +71,7 @@
   .gallery_message {
     display: none;
   }
-  .gallery_section {
-    margin-bottom: 8rem;
-  }
+
   .tattoo_gallery {
     height: auto;
     margin-top: 0rem;

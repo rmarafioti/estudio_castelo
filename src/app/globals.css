@@ -79,7 +79,7 @@ main {
   justify-content: center;
   animation: fadeIn 2s ease-in-out;
   width: 100%;
-  padding: 0rem 0rem 6rem 0rem;
+  padding: 0rem 0rem 20rem 0rem;
 }
 
 article {
@@ -103,9 +103,7 @@ section.visible {
 }
 
 @media (max-width: 1200px) {
-  main {
-  padding: 0rem;
-}
+
   section {
     padding-top: 0rem;
     width: 100%;
@@ -150,7 +148,7 @@ button {
   }
   main {
     width: 100%;
-    padding: 2rem 0rem 0rem 0rem;
+    padding: 2rem 0rem 10rem 0rem;
   }
   form {
     width: 100%;
