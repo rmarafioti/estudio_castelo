@@ -53,11 +53,11 @@ export default function AccessMenu({
                 <FaMinus
                   className={styles.sizeItem}
                   role="button"
-                  onClick={() => adjustFontSize(-1)}
+                  onClick={() => adjustFontSize(-0.5)}
                   aria-label="decrease font size"
                 />
                 <div className={styles.indicators}>
-                  {[1, 2, 3, 4].map((level) => (
+                  {[1, 1.5, 2, 2.5].map((level) => (
                     <FaCircle
                       key={level}
                       className={`${styles.indicator} ${
@@ -72,7 +72,7 @@ export default function AccessMenu({
                   className={styles.sizeItem}
                   role="button"
                   onClick={() => {
-                    adjustFontSize(1);
+                    adjustFontSize(0.5);
                   }}
                   aria-label="increase font size"
                 />

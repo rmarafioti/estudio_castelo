@@ -68,18 +68,22 @@ export default function Gallery({
         >
           <IoChevronBackCircle className={styles.icon} />
         </button>
-        <Image
-          src={currentImageObj.src}
-          alt={currentImageObj.alt}
-          width={currentImageObj.width}
-          height={currentImageObj.height}
-          className={`${styles.photo} ${isZoomed ? styles.zoomed : ""}`}
-          onClick={() => setIsZoomed(true)}
-          priority
-        />
-        {/* currentImageObj.description ? 
-        <p>{currentImageObj.description</p> : ""
-        */}
+        <div className={styles.image_section}>
+          <Image
+            src={currentImageObj.src}
+            alt={currentImageObj.alt}
+            width={currentImageObj.width}
+            height={currentImageObj.height}
+            className={`${styles.photo} ${isZoomed ? styles.zoomed : ""}`}
+            onClick={() => setIsZoomed(true)}
+            priority
+          />
+          {currentImageObj.description ? (
+            <p className={styles.description}>{currentImageObj.description}</p>
+          ) : (
+            ""
+          )}
+        </div>
         <button
           className={styles.gallery_button_right}
           onClick={onNext}

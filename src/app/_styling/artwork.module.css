@@ -3,6 +3,47 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10rem;
+  margin: 10rem 0rem 4rem 0rem;
   width: 600px;
+}
+
+.gallery_section {
+  margin-bottom: 8rem;
+}
+
+.copy,
+.gallery_message {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.tattoo_gallery {
+  margin-top: 1rem;
+  background-color: #1d1b20;
+  height: 540px;
+  width: 800px;
+}
+
+@media (max-width: 1200px) {
+  .contact_header_section,
+  .tattoo_gallery {
+    width: 100%;
+  }
+
+  .contact_header_section {
+    margin-top: 6rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+
+  .gallery_message {
+    display: none;
+  }
+  .gallery_section {
+    margin-bottom: 8rem;
+  }
+  .tattoo_gallery {
+    height: auto;
+    margin-top: 0rem;
+  }
 }
