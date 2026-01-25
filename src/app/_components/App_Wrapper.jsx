@@ -23,7 +23,10 @@ export default function AppWrapper({ children }) {
   const adjustFontSize = (increment) => {
     setAccessibility((prev) => ({
       ...prev,
-      fontSizeAdjust: Math.max(1, Math.min(4, prev.fontSizeAdjust + increment)),
+      fontSizeAdjust: Math.max(
+        1,
+        Math.min(2.5, prev.fontSizeAdjust + increment),
+      ),
     }));
   };
 
