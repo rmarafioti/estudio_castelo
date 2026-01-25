@@ -11,9 +11,16 @@
 
 .hero_copy_container {
   position: absolute;
-  top: 160px;
-  left: 800px;
-  width: 400px;
+  top: 140px;
+  left: 740px;
+  width: 600px;
+}
+
+.bio_container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .review_section {
@@ -52,6 +59,16 @@
   font-weight: 300;
   letter-spacing: 1px;
   margin-bottom: 1rem;
+}
+
+.bio_copy {
+  position: absolute;
+  right: 600;
+  width: 600px;
+}
+
+.bio_photo {
+  margin-right: 8rem;
 }
 
 .review_copy {
@@ -118,6 +135,9 @@
   .hero_image_container,
   .hero_copy_container,
   .header_review,
+  .bio_container,
+  .bio_copy,
+  .bio_photo,
   .review_image_container,
   .review_copy_container,
   .header,
@@ -127,12 +147,27 @@
   }
 
   .hero_section,
+  .bio_container,
   .review_section {
     position: static;
   }
 
+  .hero_section,
+  .bio_container {
+    margin-bottom: 4rem;
+  }
+
+  .bio_container {
+    flex-direction: column-reverse;
+  }
+
+  .bio_photo {
+  margin-right: 0rem;
+  height: auto;
+}
+
   .review_section {
-    margin-top: 1rem;
+    margin-top: 0rem;
   }
 
   .review_image_container {
@@ -142,6 +177,7 @@
   }
 
   .hero_copy_container,
+  .bio_copy,
   .review_copy_container {
     position: static;
     top: auto;
@@ -155,7 +191,7 @@
   }
 
   .header_review {
-    margin-top: -64rem;
+    margin-top: -66rem;
     margin-bottom: 18rem;
     word-wrap: break-word;
   }

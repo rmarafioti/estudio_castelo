@@ -37,7 +37,7 @@ export default function Navbar() {
 
   const links = [
     { href: "/tattooing", label: "Tattooing" },
-    { href: "/about", label: "About" },
+    { href: "/artwork", label: "Artwork" },
     { href: "/contact", label: "Contact" },
   ];
 

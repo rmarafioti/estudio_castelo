@@ -19,13 +19,6 @@ export const heroPhoto = {
   },
 };
 
-export const landingPageTattooPhoto = {
-  alt: "...",
-  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1767568786/estudio_castelo/landing_page_tattooing_image_bxlpfx.png",
-  height: 406,
-  width: 608,
-};
-
 export const landingPageBioPhoto = {
   alt: "...",
   src: "https://res.cloudinary.com/dzpne110u/image/upload/v1767568713/estudio_castelo/landing_page_bio_image_ffrd0j.png",
