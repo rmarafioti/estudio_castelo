@@ -20,7 +20,7 @@ export default function Artwork() {
           consectetur adipiscing elit quisque faucibus.
         </p>
       </FadeInSection>
-      <FadeInSection className={styles.gallery_section}>
+      <FadeInSection>
         <em className={styles.gallery_message}>*Click on photo to zoom in</em>
         <div className={styles.tattoo_gallery}>
           <Gallery

@@ -61,13 +61,6 @@ export default function Gallery({
         tabIndex={0}
         className={styles.navigate_section}
       >
-        <button
-          className={styles.gallery_button_left}
-          onClick={onPrev}
-          aria-label="previous photo"
-        >
-          <IoChevronBackCircle className={styles.icon} />
-        </button>
         <div className={styles.image_section}>
           <Image
             src={currentImageObj.src}
@@ -84,18 +77,18 @@ export default function Gallery({
             ""
           )}
         </div>
-        <button
-          className={styles.gallery_button_right}
-          onClick={onNext}
-          aria-label="next photo"
-        >
-          <IoChevronForwardCircle className={styles.icon} />
-        </button>
       </div>
 
       {isZoomed && <Zoomed_Gallery />}
 
       <div className={styles.indicator_section}>
+        <button
+          className={styles.gallery_button_left}
+          onClick={onPrev}
+          aria-label="previous photo"
+        >
+          <IoChevronBackCircle className={styles.icon} />
+        </button>
         <div className={styles.indicators}>
           {photos.map((photo, index) => (
             <FaCircle
@@ -106,6 +99,13 @@ export default function Gallery({
             />
           ))}
         </div>
+        <button
+          className={styles.gallery_button_right}
+          onClick={onNext}
+          aria-label="next photo"
+        >
+          <IoChevronForwardCircle className={styles.icon} />
+        </button>
       </div>
     </div>
   );

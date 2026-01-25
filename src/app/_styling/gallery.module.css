@@ -10,19 +10,6 @@
   display: flex;
 }
 
-.gallery_button_left,
-.gallery_button_right {
-  background-color: transparent;
-  cursor: pointer;
-  align-self: center;
-  border-radius: 0px;
-}
-
-.icon {
-  font-size: 40px;
-  color: rgba(252, 251, 251, 0.5);
-}
-
 .image_section {
   display: flex;
   flex-direction: column;
@@ -36,13 +23,13 @@
 }
 
 .description {
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
   text-align: center;
   width: 800px;
   padding: 1rem 0rem;
-   background-color: #1d1b20;
+  background-color: #1d1b20;
 }
 
 .zoom_overlay {
@@ -77,12 +64,25 @@
 
 .indicator_section {
   display: flex;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2rem;
   background-color: var(--dm_background);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   width: 800px;
+}
+
+.gallery_button_left,
+.gallery_button_right {
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.icon {
+  font-size: 40px;
+  color: #98969c;
 }
 
 .indicator {
@@ -101,10 +101,12 @@
     pointer-events: none;
     width: 100%;
     height: auto;
+    align-self: center;
   }
 
   .gallery,
   .description,
+  .image_section,
   .navigate_section {
     width: 100%;
   }
@@ -115,24 +117,17 @@
     border-bottom-right-radius: 0px;
   }
 
+  .indicators {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
   .indicator {
     font-size: 10px;
-  }
-
-  .gallery_button_left,
-  .gallery_button_right {
-    position: fixed;
-    background-color: transparent;
-    cursor: pointer;
-    align-self: center;
-    border-radius: 0px;
-    width: 60px;
-  }
-
-  .gallery_button_left {
-    left: 0;
-  }
-  .gallery_button_right {
-    right: 0;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
   }
 }
