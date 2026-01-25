@@ -77,6 +77,9 @@ export default function Gallery({
           onClick={() => setIsZoomed(true)}
           priority
         />
+        {/* currentImageObj.description ? 
+        <p>{currentImageObj.description</p> : ""
+        */}
         <button
           className={styles.gallery_button_right}
           onClick={onNext}

@@ -4,7 +4,6 @@ import {
   heroPhoto,
   reviewSectionBackground,
   landingPageBioPhoto,
-  landingPageTattooPhoto,
 } from "./_data/photos";
 import { reviews } from "./_data/copy";
 import FadeInSection from "./_components/Fade_In_Section";
@@ -54,26 +53,35 @@ export default function Home() {
           </p>
         </FadeInSection>
       </article>
-      {/*<div>
-        <div>
+      <article>
+        <FadeInSection className={styles.bio_container}>
+          <div className={styles.bio_copy}>
+            <h2 className={styles.header}>About the Artist</h2>
+            <p className={styles.copy}>
+              Felipe de Sousa is a expert tattoo artist from Brazil, and
+              established in Chicago since 2014. He makes his tattoo work at{" "}
+              <a
+                href="https://www.ashandivorytattoo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ash & Ivory Tattoo
+              </a>
+              , shop that he co-owns in West Town. Estúdio Castelo is his own
+              personal art studio where he focues on trying new mediums and
+              materials, and experiencing new ways to get places with sharing my
+              artwork.{" "}
+            </p>
+          </div>
           <Image
-            src={landingPageTattooPhoto.src}
-            alt={landingPageTattooPhoto.alt}
-            height={landingPageTattooPhoto.height}
-            width={landingPageTattooPhoto.width}
+            src={landingPageBioPhoto.src}
+            alt={landingPageBioPhoto.alt}
+            height={landingPageBioPhoto.height}
+            width={landingPageBioPhoto.width}
+            className={styles.bio_photo}
           />
-          <h2>Tattooing</h2>
-          <p>View Felipe's porfolio</p>
-        </div>
-        <Image
-          src={landingPageBioPhoto.src}
-          alt={landingPageBioPhoto.alt}
-          height={landingPageBioPhoto.height}
-          width={landingPageBioPhoto.width}
-        />
-        <h2>About</h2>
-        <p>Get to know Felipe</p>
-      </div>*/}
+        </FadeInSection>
+      </article>
       <article className={styles.review_section}>
         <div className={styles.review_image_container}>
           <Responsive_Image photoData={reviewSectionBackground} />
