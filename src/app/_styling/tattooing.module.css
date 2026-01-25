@@ -23,7 +23,9 @@
   top: 140px;
 }
 
-.copy, .gallery_message {
+.copy,
+.gallery_message,
+.ig_button {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
@@ -36,8 +38,22 @@
   width: 800px;
 }
 
-.gallery_section {
-  margin-bottom: 4rem;
+.button_section {
+margin-top: 6rem;
+}
+
+.ig_button {
+  color: var(--foreground);
+  background: var(--dm_background);
+  font-weight: 400;
+  padding: 1rem;
+  width: 300px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.ig_button:hover {
+  background: rgba(211, 211, 211, 0.5);
 }
 
 @media (max-width: 1200px) {
@@ -45,8 +61,20 @@
   .tattooing_image_container,
   .tattooing_header_container,
   .tattooing_copy_container,
-  .tattoo_gallery {
+  .tattoo_gallery,
+  .ig_button {
     width: 100%;
+  }
+
+  .button_section {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+
+  .ig_button {
+    background: #98969c;
   }
 
   .tattooing_header_section {
@@ -67,10 +95,6 @@
     padding: 1rem 1rem 0rem 1rem;
   }
 
-  .header {
-    margin-bottom: 0rem;
-  }
-
   .tattooing_header_container,
   .tattooing_copy_container {
     bottom: auto;
@@ -79,12 +103,9 @@
   .gallery_message {
     display: none;
   }
-  .gallery_section {
-    margin-bottom: 8rem;
-  }
+
   .tattoo_gallery {
     height: auto;
     margin-top: 0rem;
   }
 }
-

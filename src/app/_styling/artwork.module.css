@@ -7,10 +7,6 @@
   width: 600px;
 }
 
-.gallery_section {
-  margin-bottom: 8rem;
-}
-
 .copy,
 .gallery_message {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -39,9 +35,7 @@
   .gallery_message {
     display: none;
   }
-  .gallery_section {
-    margin-bottom: 8rem;
-  }
+
   .tattoo_gallery {
     height: auto;
     margin-top: 0rem;

@@ -30,7 +30,7 @@ export default function Tattooing() {
           </p>
         </FadeInSection>
       </article>
-      <FadeInSection className={styles.gallery_section}>
+      <FadeInSection>
         <em className={styles.gallery_message}>*Click on photo to zoom in</em>
         <div className={styles.tattoo_gallery}>
           <Gallery
@@ -40,6 +40,17 @@ export default function Tattooing() {
             currentImageObj={currentImageObj}
             photos={photos}
           />
+        </div>
+        <div className={styles.button_section}>
+          <button className={styles.ig_button}>
+            <a
+              href="https://www.instagram.com/tattoosbymanga/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              view more tattoos
+            </a>
+          </button>
         </div>
       </FadeInSection>
     </main>
