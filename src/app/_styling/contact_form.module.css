@@ -1,0 +1,80 @@
+.header {
+  margin-bottom: 0.5rem;
+}
+
+.sub_header {
+  margin-bottom: 1rem;
+}
+
+.name,
+.email,
+.message,
+.send {
+  font-size: 20px;
+  display: flex;
+  padding: 0.5rem;
+  margin: 0.2rem 0rem 1rem 0rem;
+  border-radius: 5px;
+  border: 1px solid var(--foreground);
+  width: 100%;
+}
+
+.message {
+  height: 120px;
+}
+
+.send {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  background-color: lightgray;
+  padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.send:hover {
+  color: var(--background);
+  background-color: var(--foreground);
+}
+
+.required_error {
+  padding-bottom: 0.5rem;
+}
+
+/* dark mode stylings */
+@media (prefers-color-scheme: dark) {
+  .name,
+  .email,
+  .message {
+    background-color: var(--dm_background);
+  }
+  .send {
+    color: var(--background);
+  }
+}
+
+[data-theme="dark"] :is(.name, .email, .message) {
+  background-color: var(--dm_background);
+}
+
+@media (max-width: 667px) and (hover: none) {
+  .header {
+    margin-top: 1rem;
+  }
+  .sub_header {
+    margin-bottom: 1rem;
+  }
+  .name,
+  .email,
+  .message,
+  .send,
+  .sub_header,
+  .form {
+    width: 100%;
+  }
+  .send {
+    text-align: center;
+  }
+}

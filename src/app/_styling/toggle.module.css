@@ -1,0 +1,63 @@
+.toggleSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .toggleContainer {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(45deg,  #908c8c, rgba(255, 255, 255, 0.87));
+    height: 26px;
+    box-shadow: inset 5px 5px 10px  #7d7b7b;
+    border-radius: 50px;
+    width: 52px;
+  
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .toggleItem {
+    font-size: 30px;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+  }
+  
+  .toggleButton {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.87);
+    height: 20px;
+    width: 20px;
+    top: 2.5px;
+    left: 4px;
+    border-radius: 50px;
+    transition: left 0.3s ease-in-out;
+    margin-bottom: 0rem;
+  }
+
+  .toggled {
+    left: calc(100% - 26px);
+  }
+  
+  @media (max-width: 667px) {
+    .toggleSection {
+      margin-right: 0rem;
+      width: 100px;
+    }
+  
+    .toggleItem {
+      font-size: 28px;
+      margin: 0rem 0.1rem 0rem 0.1rem;
+    }
+  
+    .toggleConatainer {
+      height: 30px;
+      width: 60px;
+    }
+    .toggleButton {
+      height: 22px;
+      width: 22px;
+      top: 2px;
+    }
+  }
