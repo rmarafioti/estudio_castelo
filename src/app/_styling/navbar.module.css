@@ -1,8 +1,10 @@
 .siteLogo {
   height: auto;
   width: 700px;
+  padding-bottom: 1rem;
 }
 
+.nav_container,
 .link_container {
   width: 100%;
   display: flex;
@@ -11,17 +13,13 @@
 }
 
 .nav_link {
-  width: 120px;
+  width: 260px;
+  color: var(--foreground);
   text-align: center;
   font-weight: 600;
   font-size: 28px;
   padding: 0.5rem;
   text-decoration: none;
-}
-
-.nav_link:hover {
-  background: lightgray;
-  border-bottom: none;
 }
 
 .mobile_nav {
@@ -33,7 +31,8 @@
 }
 
 @media (max-width: 667px) {
-  .siteLogo {
+  .siteLogo,
+  .link_container {
     display: none;
   }
 
@@ -44,7 +43,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 4rem 1rem 1rem 1rem;
     z-index: 1000;
   }
 
@@ -53,7 +52,7 @@
   .menu {
     width: 100%;
     background-color: var(--background);
-    margin-top: 2.9rem;
+    margin-top: 4.8rem;
   }
 
   .menu.active {

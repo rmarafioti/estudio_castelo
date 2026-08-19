@@ -23,19 +23,16 @@ export default function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
-  {
-    /*const links = [
-    { href: "/", label: "Home" },
-    { href: "/featureOne", label: "One" },
-    { href: "/featureTwo", label: "Two" },
-    { href: "/featureThree", label: "Three" },
-  ];*/
-  }
+  const links = [
+    { href: "/featureOne", label: "About" },
+    { href: "/featureTwo", label: "Original Artwork" },
+    /*{ href: "/featureThree", label: "Three" },*/
+  ];
 
   return (
     <>
       <nav>
-        <Link href="/">
+        <Link href="/" className={pc.nav_container}>
           <Image
             src={siteLogo.src}
             height={siteLogo.height}
@@ -46,15 +43,13 @@ export default function Navbar() {
           />
         </Link>
 
-        {/*<div className={pc.link_container}>
-          {links
-            .filter((link) => link.href)
-            .map(({ href, label }) => (
-              <Link key={href} href={href} className={pc.nav_link}>
-                {label}
-              </Link>
-            ))}
-        </div>*/}
+        <div className={pc.link_container}>
+          {links.map(({ href, label }) => (
+            <Link key={href} href={href} className={pc.nav_link}>
+              {label}
+            </Link>
+          ))}
+        </div>
 
         {/* mobile navigation menu below */}
         <div className={pc.mobile_nav}>
@@ -84,18 +79,16 @@ export default function Navbar() {
         className={`${pc.menu} ${menuOpen ? pc.active : ""}`}
         aria-label="Mobile Navigation"
       >
-        {/*{links
-          .filter((link) => link.href !== "/")
-          .map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              role="heading"
-              className={mobile.nav_link}
-            >
-              {label}
-            </Link>
-          ))}*/}
+        {links.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            role="heading"
+            className={mobile.nav_link}
+          >
+            {label}
+          </Link>
+        ))}
       </menu>
     </>
   );
