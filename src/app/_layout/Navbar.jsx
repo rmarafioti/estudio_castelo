@@ -42,6 +42,7 @@ export default function Navbar() {
             width={siteLogo.width}
             alt={siteLogo.alt}
             className={pc.siteLogo}
+            priority
           />
         </Link>
 
@@ -64,6 +65,7 @@ export default function Navbar() {
               width={siteLogo.width}
               alt={siteLogo.alt}
               className={mobile.siteLogo}
+              priority
             />
           </Link>
           {/*hamburger menu*/}
