@@ -1,23 +1,20 @@
 export const heroPhoto = {
-  alt: "Picture of a 1980s desktop computer with the words 'pc view' overlayed ontop of the image",
+  alt: "Watercolor painting of a woman's face looking head on",
   desktop: {
-    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1766331084/frontend_scaffold/pc_view_fm6skx.png",
-    height: 418,
-    width: 662,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787074960/estudio_castelo/felipe_artwork_hero_image_pafdsy.png",
+    height: 1427,
+    width: 2880,
   },
   mobile: {
-    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1766331102/frontend_scaffold/mobile_view_sh76yr.png",
-    height: 632,
-    width: 426,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787075194/estudio_castelo/felipe_artwork_hero_image_mobile_djyglm.png",
+    height: 1440,
+    width: 1188,
   },
 };
 
-export const icons = {
-  alt: "website icon and home page button",
-  src_light:
-    "https://res.cloudinary.com/dzpne110u/image/upload/v1761257615/wedding_website/icons/monogram_maroon_vmlyu6.svg",
-  src_dark:
-    "https://res.cloudinary.com/dzpne110u/image/upload/v1761257555/wedding_website/icons/monogram_blush_xospub.svg",
-  height: 118,
-  width: 179,
+export const siteLogo = {
+  src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787074109/estudio_castelo/logofortopoflandingpage_ujcr92.png",
+  height: 495,
+  width: 3237,
+  alt: "site logo for Estudio Castelo",
 };

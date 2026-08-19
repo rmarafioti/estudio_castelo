@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Responsive_Image_Theme from "../_components/Responsive_Image_Theme";
-import { icons } from "../_data/photos";
+import Image from "next/image";
 import Link from "next/link";
+
+import { siteLogo } from "../_data/photos";
 
 /* naming conventions to define responsive design*/
 import pc from "../_styling/navbar.module.css";
@@ -22,18 +23,29 @@ export default function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
-  const links = [
+  {
+    /*const links = [
     { href: "/", label: "Home" },
     { href: "/featureOne", label: "One" },
     { href: "/featureTwo", label: "Two" },
     { href: "/featureThree", label: "Three" },
-  ];
+  ];*/
+  }
 
   return (
     <>
       <nav>
-        <Responsive_Image_Theme photoData={icons} className={pc.nav_icon} />
-        <div className={pc.link_container}>
+        <Link href="/">
+          <Image
+            src={siteLogo.src}
+            height={siteLogo.height}
+            width={siteLogo.width}
+            alt={siteLogo.alt}
+            className={pc.siteLogo}
+          />
+        </Link>
+
+        {/*<div className={pc.link_container}>
           {links
             .filter((link) => link.href)
             .map(({ href, label }) => (
@@ -41,12 +53,18 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
-        </div>
+        </div>*/}
 
         {/* mobile navigation menu below */}
         <div className={pc.mobile_nav}>
-          <Link href="/" className={pc.nav_link}>
-            Home
+          <Link href="/">
+            <Image
+              src={siteLogo.src}
+              height={siteLogo.height}
+              width={siteLogo.width}
+              alt={siteLogo.alt}
+              className={mobile.siteLogo}
+            />
           </Link>
           {/*hamburger menu*/}
           <div id={mobile.hamMenuContainer} onClick={toggleMenu}>
@@ -64,7 +82,7 @@ export default function Navbar() {
         className={`${pc.menu} ${menuOpen ? pc.active : ""}`}
         aria-label="Mobile Navigation"
       >
-        {links
+        {/*{links
           .filter((link) => link.href !== "/")
           .map(({ href, label }) => (
             <Link
@@ -75,7 +93,7 @@ export default function Navbar() {
             >
               {label}
             </Link>
-          ))}
+          ))}*/}
       </menu>
     </>
   );

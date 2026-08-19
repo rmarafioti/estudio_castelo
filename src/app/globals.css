@@ -8,21 +8,6 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --dm_background: #3b3840;
-
-  --main-font: "Outfit", serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-:root[data-theme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
 }
 
 html,
@@ -37,17 +22,13 @@ body {
   font-family: var(--main-font);
 }
 
-/* important for accessibility font reszing */
-.appContainer {
-  font-size: 1rem;
-}
-
 h1 {
   font-size: 2.5em;
   margin-bottom: 2rem;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-size: 2.5em;
   margin-bottom: 2rem;
 }
@@ -58,11 +39,6 @@ button {
   font-size: 1em;
 }
 
-/* accessibility font style */
-.accessible-font {
-  font-family: Arial, Verdana, sans-serif;
-}
-
 a {
   color: inherit;
 }
@@ -70,32 +46,28 @@ a {
 nav {
   display: flex;
   flex-direction: row;
-  padding: 2rem 0rem 2rem 0rem;
-  align-items: center;
-  border-bottom: 1px solid lightgray;
+  justify-content: center;
+  padding: 1rem 0rem 1rem 0rem;
+  background-color: white;
 }
 
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2rem 0rem 2rem 0rem;
-  border-top: 1px solid lightgray;
 }
 
 main {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
   animation: fadeIn 2s ease-in-out;
-  width: 100%;
-  min-height: 100vh;
-  padding: 6rem 1rem 6rem 1rem;
+  width: 100vw;
 }
 
 section {
-  width: 800px;
   text-align: left;
   opacity: 0;
   transform: translateY(40px);
@@ -104,13 +76,9 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0px);
-  transition: opacity 1.5s ease-in, transform 1s ease-in;
-}
-
-@media (max-width: 800px) {
-  section {
-    width: 100%;
-  }
+  transition:
+    opacity 1.5s ease-in,
+    transform 1s ease-in;
 }
 
 @keyframes fadeIn {
@@ -126,7 +94,7 @@ section.visible {
   animation: fadeIn 1s ease-in-out;
 }
 
-form {
+/*form {
   width: 600px;
   text-align: left;
 }
@@ -136,28 +104,18 @@ button {
   padding: 0.5rem;
   border-radius: 5px;
   width: 120px;
-}
+}*/
 
 /* responsive */
 @media (max-width: 667px) {
-  nav {
-    border-bottom: none;
-  }
   footer {
     width: 100%;
     font-size: 0.8rem;
   }
-  main {
-    width: 100%;
-    padding: 2rem 1rem 6rem 1rem;
-  }
   form {
     width: 100%;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  main {
+    height: 80vh;
   }
 }
