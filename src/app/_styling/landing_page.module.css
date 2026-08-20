@@ -2,9 +2,3 @@
     position: relative;
     width: 100vw;
 }
-
-@media (max-width: 800px) {
-    .heroPhoto{
-        margin-top: 4.8rem;
-    }
-}
