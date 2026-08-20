@@ -19,7 +19,7 @@ export const siteLogo = {
   alt: "site logo for Estudio Castelo",
 };
 
-export const photoGallery = [
+export const originalArtwork = [
   {
     id: 1,
     src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787074527/estudio_castelo/felipe_art_1_rs15t7.jpg",

@@ -69,6 +69,7 @@ main {
   justify-items: center;
   animation: fadeIn 2s ease-in-out;
   width: 100vw;
+  margin-top: 8rem;
 }
 
 section {
@@ -121,5 +122,6 @@ button {
   }
   main {
     height: 80vh;
+    margin-top: 6rem;
   }
 }

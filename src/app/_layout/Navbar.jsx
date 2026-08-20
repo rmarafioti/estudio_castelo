@@ -24,8 +24,8 @@ export default function Navbar() {
   };
 
   const links = [
-    { href: "/featureOne", label: "About" },
-    { href: "/featureTwo", label: "Original Artwork" },
+    { href: "/about", label: "About" },
+    { href: "/originalArtwork", label: "Original Artwork" },
     /*{ href: "/featureThree", label: "Three" },*/
   ];
 
