@@ -10,11 +10,11 @@ export default function Original_Artwork() {
   return (
     <FadeInSection>
       <div className={styles.header_section}>
-        <h1>Original Artwork Page</h1>
-        <h2>
+        <h1>Original Artwork</h1>
+        <p>
           A selection of original, hand-made drawings and paintings by Felipe de
           Sousa. Every piece is hand-signed and dated on the back.
-        </h2>
+        </p>
       </div>
       <div className={styles.original_artwork_container}>
         {originalArtwork.map(({ id, src, height, width, alt }) => (

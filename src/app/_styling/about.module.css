@@ -1,0 +1,12 @@
+.header_section {
+  background-color: red;
+  padding: 6rem 1rem 2rem 1rem;
+  height: 90vh;
+}
+
+@media (max-width: 667px) {
+  .header_section {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+}
