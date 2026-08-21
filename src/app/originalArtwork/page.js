@@ -42,7 +42,7 @@ export default function Original_Artwork() {
           <h1>Original Artwork</h1>
           <p>
             A selection of original, hand-made drawings and paintings by Felipe
-            de Sousa. Every piece 9"x"12 mixed media on paper, hand-signed and
+            de Sousa. Every piece 9"x12" mixed media on paper, hand-signed and
             dated on the back.
           </p>
         </div>
