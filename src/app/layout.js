@@ -8,9 +8,9 @@ import "./globals.css";
 export const metadata = {
   title: "Estudio Castelo",
   description: "Artist website",
-  icons: {
+  /*icons: {
     icon: "/favicon.svg",
-  },
+  },*/
 };
 
 const quicksand = Quicksand({
