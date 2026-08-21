@@ -126,7 +126,6 @@ button {
     width: 100%;
   }
   main {
-    height: 80vh;
-    margin-top: 5rem;
+    margin-top: 0rem;
   }
 }

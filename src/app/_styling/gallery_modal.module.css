@@ -79,12 +79,8 @@
   color: rgb(223, 203, 172);
 }
 
-@media (max-width: 1300px) {
-  .modalContent {
-    width: 90%;
-  }
-  .modalContent {
-    flex-direction: column;
-    padding: 1rem;
+@media (max-width: 667px) {
+  .modal {
+    display: none;
   }
 }

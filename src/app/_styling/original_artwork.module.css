@@ -16,24 +16,23 @@
   width: 280px;
   height: 400px;
   margin: 0rem 1rem 2rem 1rem;
+  transition: 0.5s ease-in-out;
 }
 
 .artwork {
   width: 100%;
   height: 100%;
   object-fit: fill;
-  transition: 0.5s ease-in-out;
 }
 
-.artwork:hover {
-  filter: drop-shadow(10px 10px 4px rgb(185, 185, 185));
-  border-radius: 20px;
+.artwork_frame:hover {
+  box-shadow: 12px 12px 0px 1px rgb(192, 191, 189);
   cursor: pointer;
 }
 
 @media (max-width: 667px) {
   .header_section {
-    padding-top: 0rem;
+    padding-top: 4.5rem;
     padding-bottom: 0rem;
     margin-left: 0rem;
     width: 90vw;
@@ -45,9 +44,8 @@
     margin: 0rem 1rem 2rem 1rem;
   }
 
-  .artwork:hover {
-    filter: none;
-    border-radius: initial;
+  .artwork_frame:hover {
+    box-shadow: none;
     cursor: default;
   }
 }

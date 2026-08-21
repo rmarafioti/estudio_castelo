@@ -41,13 +41,6 @@ export default function Gallery_Modal({
     >
       <div className={styles.modalContent}>
         <div className={styles.section}>
-          {/*<button
-            className={styles.gallery_button}
-            onClick={onPrev}
-            aria-label="previous photo"
-          >
-            <IoChevronBackCircle />
-          </button>*/}
           <div className={styles.indicator_section}>
             <IoIosClose
               onClick={closeModal}
