@@ -18,14 +18,15 @@ export default function Original_Artwork() {
       </div>
       <div className={styles.original_artwork_container}>
         {originalArtwork.map(({ id, src, height, width, alt }) => (
-          <Image
-            key={id}
-            src={src}
-            height={height}
-            width={width}
-            alt={alt}
-            className={styles.artwork}
-          />
+          <div key={id} className={styles.artwork_frame}>
+            <Image
+              src={src}
+              height={height}
+              width={width}
+              alt={alt}
+              className={styles.artwork}
+            />
+          </div>
         ))}
       </div>
     </FadeInSection>

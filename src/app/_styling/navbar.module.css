@@ -1,7 +1,6 @@
 .siteLogo {
   height: auto;
   width: 700px;
-  padding-bottom: 1rem;
 }
 
 .nav_container,
@@ -10,6 +9,10 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.link_container {
+  background-color: rgba(250, 246, 246, 0.4);
 }
 
 .nav_link {
@@ -60,7 +63,7 @@
     position: fixed;
     flex-direction: column;
     text-align: center;
-    height: 39vh;
+    background-color: rgba(250, 246, 246, .9);
     z-index: 1000;
   }
 }

@@ -6,9 +6,9 @@ export const heroPhoto = {
     width: 2880,
   },
   mobile: {
-    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787075194/estudio_castelo/felipe_artwork_hero_image_mobile_djyglm.png",
-    height: 1440,
-    width: 1188,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787074528/estudio_castelo/felipe_art_3_r0y9he.jpg",
+    height: 3424,
+    width: 2456,
   },
 };
 
@@ -71,9 +71,30 @@ export const originalArtwork = [
   },
   {
     id: 8,
-    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787074540/estudio_castelo/felipe_art_8_zsk0rz.jpg",
-    height: 3200,
-    width: 2472,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787277443/estudio_castelo/felipe_art_8_d0nk4u.jpg",
+    height: 3527,
+    width: 2675,
+    alt: "...",
+  },
+  {
+    id: 9,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787277451/estudio_castelo/felipe_art_9_dflgb4.jpg",
+    height: 3412,
+    width: 2456,
+    alt: "...",
+  },
+  {
+    id: 10,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787277458/estudio_castelo/felipe_art_10_b8yxwg.jpg",
+    height: 3244,
+    width: 2452,
+    alt: "...",
+  },
+  {
+    id: 11,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787277465/estudio_castelo/felipe_art_11_tgpaeh.jpg",
+    height: 3424,
+    width: 2456,
     alt: "...",
   },
 ];
