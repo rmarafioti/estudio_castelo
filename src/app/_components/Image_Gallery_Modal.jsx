@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 import { IoIosClose } from "react-icons/io";
@@ -16,38 +17,57 @@ export default function Gallery_Modal({
   onPrev,
   currentImageObj,
 }) {
-  if (!isOpen || !currentImageObj) return null;
+  const dialogRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
 
-  const handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) {
-      closeModal();
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (isOpen) {
+      if (!dialog.open) dialog.showModal();
+    } else {
+      if (dialog.open) dialog.close();
     }
+  }, [isOpen]);
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    closeModal();
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Escape") closeModal();
     if (e.key === "ArrowRight") onNext();
     if (e.key === "ArrowLeft") onPrev();
   };
 
-  return (
-    <div
+  if (!mounted || !currentImageObj) return null;
+
+  return createPortal(
+    <dialog
+      ref={dialogRef}
       className={styles.modal}
-      onClick={handleBackdropClick}
+      onCancel={handleCancel}
       onKeyDown={handleKeyDown}
-      tabIndex={0}
+      aria-label={`Image viewer: ${currentImageObj.alt}`}
     >
       <div className={styles.modalContent}>
         <div className={styles.section}>
           <div className={styles.right_side_container}>
             <button
+              type="button"
               className={styles.gallery_button}
               onClick={onPrev}
-              aria-label="next photo"
+              aria-label="previous photo"
             >
               <IoIosArrowBack />
             </button>
           </div>
+
           <div className={styles.artwork_frame}>
             <Image
               src={currentImageObj.src}
@@ -58,13 +78,18 @@ export default function Gallery_Modal({
               priority
             />
           </div>
+
           <div className={styles.left_side_container}>
-            <IoIosClose
+            <button
+              type="button"
               onClick={closeModal}
               className={styles.closeButton}
-              aria-label="close modal button"
-            />
+              aria-label="close modal"
+            >
+              <IoIosClose aria-hidden="true" />
+            </button>
             <button
+              type="button"
               className={styles.gallery_button}
               onClick={onNext}
               aria-label="next photo"
@@ -74,6 +99,7 @@ export default function Gallery_Modal({
           </div>
         </div>
       </div>
-    </div>
+    </dialog>,
+    document.body,
   );
 }
