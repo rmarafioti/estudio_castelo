@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { IoIosClose } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import { FaCircle } from "react-icons/fa6";
+import { IoIosArrowBack } from "react-icons/io";
 
 import styles from "../_styling/gallery_modal.module.css";
 
@@ -14,9 +14,7 @@ export default function Gallery_Modal({
   closeModal,
   onNext,
   onPrev,
-  currentIndex,
   currentImageObj,
-  photos,
 }) {
   if (!isOpen || !currentImageObj) return null;
 
@@ -41,22 +39,14 @@ export default function Gallery_Modal({
     >
       <div className={styles.modalContent}>
         <div className={styles.section}>
-          <div className={styles.indicator_section}>
-            <IoIosClose
-              onClick={closeModal}
-              className={styles.closeButton}
-              aria-label="close modal button"
-            />
-            <div className={styles.indicators}>
-              {photos.map((photo, index) => (
-                <FaCircle
-                  key={photo.id}
-                  className={`${styles.indicator} ${
-                    index === currentIndex ? styles.active : ""
-                  }`}
-                />
-              ))}
-            </div>
+          <div className={styles.right_side_container}>
+            <button
+              className={styles.gallery_button}
+              onClick={onPrev}
+              aria-label="next photo"
+            >
+              <IoIosArrowBack />
+            </button>
           </div>
           <div className={styles.artwork_frame}>
             <Image
@@ -68,13 +58,20 @@ export default function Gallery_Modal({
               priority
             />
           </div>
-          <button
-            className={styles.gallery_button}
-            onClick={onNext}
-            aria-label="next photo"
-          >
-            <IoIosArrowForward />
-          </button>
+          <div className={styles.left_side_container}>
+            <IoIosClose
+              onClick={closeModal}
+              className={styles.closeButton}
+              aria-label="close modal button"
+            />
+            <button
+              className={styles.gallery_button}
+              onClick={onNext}
+              aria-label="next photo"
+            >
+              <IoIosArrowForward />
+            </button>
+          </div>
         </div>
       </div>
     </div>

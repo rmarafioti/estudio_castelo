@@ -97,4 +97,11 @@ export const originalArtwork = [
     width: 2456,
     alt: "...",
   },
+  {
+    id: 12,
+    src: "https://res.cloudinary.com/dzpne110u/image/upload/v1787398857/estudio_castelo/felipe_art_12_lcqybc.jpg",
+    height: 3412,
+    width: 2456,
+    alt: "...",
+  },
 ];
