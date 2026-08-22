@@ -1,5 +1,6 @@
 import { Quicksand } from "next/font/google";
 
+import ScrollToTop from "./_components/Scroll_To_top";
 import Navbar from "./_layout/Navbar";
 import Footer from "./_layout/Footer";
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={quicksand.className}>
       <body>
+        <ScrollToTop />
         <Navbar />
         <main>{children}</main>
         <Footer />
