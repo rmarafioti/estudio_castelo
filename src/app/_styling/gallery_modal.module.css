@@ -72,7 +72,8 @@
 }
 
 @media (max-width: 667px) {
-  .modal {
+   .modal,
+  .modal[open] {
     display: none;
   }
 }

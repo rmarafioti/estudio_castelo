@@ -48,6 +48,11 @@
     justify-content: space-between;
     padding: 4rem 1rem 1rem 1rem;
     z-index: 1000;
+
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   /* mobile menu */
@@ -63,7 +68,7 @@
     position: fixed;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(250, 246, 246, .9);
+    background-color: rgba(250, 246, 246, 0.9);
     z-index: 1000;
   }
 }

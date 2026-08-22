@@ -10,6 +10,8 @@ import { IoIosArrowBack } from "react-icons/io";
 
 import styles from "../_styling/gallery_modal.module.css";
 
+const MOBILE_BREAKPOINT = 667;
+
 export default function Gallery_Modal({
   isOpen,
   closeModal,
@@ -28,7 +30,9 @@ export default function Gallery_Modal({
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    if (isOpen) {
+    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+
+    if (isOpen && !isMobile) {
       if (!dialog.open) dialog.showModal();
     } else {
       if (dialog.open) dialog.close();
