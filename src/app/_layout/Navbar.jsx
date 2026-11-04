@@ -1,6 +1,8 @@
+// The site navigation: logo, desktop links, and the mobile hamburger menu, which closes on
+// route change.
 "use client";
 
-import { React, useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,15 +14,15 @@ import pc from "../_styling/navbar.module.css";
 import mobile from "../_styling/mobile_nav.module.css";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  // The path the mobile menu was opened on. The menu is open only while the route is still that
+  // path, so navigating closes it without an effect.
+  const [menuOpenedOn, setMenuOpenedOn] = useState(null);
   const pathname = usePathname();
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+  const menuOpen = menuOpenedOn === pathname;
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpenedOn(menuOpen ? null : pathname);
   };
 
   const links = [

@@ -1,70 +1,38 @@
-"use client";
+// The Original Artwork page: the hardcoded header, then the artwork gallery from the Headless
+// CMS. A Server Component, so the gallery is fetched at build/regeneration time and the page
+// stays static. A missing or unpublished gallery shows the 404 page.
+import { notFound } from "next/navigation";
 
 import FadeInSection from "../_components/Fade_In_Section";
-import Image_Gallery_Modal from "../_components/Image_Gallery_Modal";
-import usePhotoGallery from "../_hooks/usePhotoGallery";
-import Image from "next/image";
-import { originalArtwork } from "../_data/photos";
+import Artwork_Gallery from "../_components/Artwork_Gallery";
+import { getGallery } from "../_lib/getGallery";
 
 import styles from "../_styling/original_artwork.module.css";
 
-function Photo_Card({ photo, onClick }) {
-  return (
-    <div className={styles.artwork_frame}>
-      <Image
-        src={photo.src}
-        alt={photo.alt}
-        width={photo.width}
-        height={photo.height}
-        onClick={onClick}
-        className={styles.artwork}
-      />
-    </div>
-  );
-}
+// The gallery's Gallery Code (slug) in the CMS dashboard.
+const GALLERY_CODE = "test-test-test";
 
-export default function Original_Artwork() {
-  const {
-    handleNext,
-    handlePrev,
-    openModal,
-    closeModal,
-    currentImageObj,
-    currentIndex,
-    isOpen,
-    photos,
-  } = usePhotoGallery(originalArtwork);
+export const metadata = {
+  title: "Original Artwork | Estudio Castelo",
+  description:
+    "Original, hand-made drawings and paintings by Felipe de Sousa, mixed media on paper.",
+};
+
+export default async function Original_Artwork() {
+  const gallery = await getGallery(GALLERY_CODE);
+  if (!gallery) notFound();
 
   return (
-    <>
-      <FadeInSection>
-        <div className={styles.header_section}>
-          <h1>Original Artwork</h1>
-          <p>
-            A selection of original, hand-made drawings and paintings by Felipe
-            de Sousa. Every piece 9"x12" mixed media on paper, hand-signed and
-            dated on the back.
-          </p>
-        </div>
-        <div className={styles.original_artwork_container}>
-          {originalArtwork.map((photo, index) => (
-            <Photo_Card
-              photo={photo}
-              key={photo.id}
-              onClick={() => openModal(index)}
-            />
-          ))}
-        </div>
-      </FadeInSection>
-      <Image_Gallery_Modal
-        isOpen={isOpen}
-        closeModal={closeModal}
-        onNext={handleNext}
-        onPrev={handlePrev}
-        currentIndex={currentIndex}
-        currentImageObj={currentImageObj}
-        photos={photos}
-      />
-    </>
+    <FadeInSection>
+      <div className={styles.header_section}>
+        <h1>Original Artwork</h1>
+        <p>
+          A selection of original, hand-made drawings and paintings by Felipe de
+          Sousa. Every piece 9&quot;x12&quot; mixed media on paper, hand-signed
+          and dated on the back.
+        </p>
+      </div>
+      <Artwork_Gallery images={gallery.images} />
+    </FadeInSection>
   );
 }

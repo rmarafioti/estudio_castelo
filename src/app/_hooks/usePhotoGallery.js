@@ -1,3 +1,4 @@
+// Open/close and next/previous state for a photo gallery's pop-over viewer.
 import { useState } from "react";
 
 const usePhotoGallery = (photos) => {
@@ -29,9 +30,7 @@ const usePhotoGallery = (photos) => {
     openModal,
     closeModal,
     currentImageObj,
-    currentIndex,
     isOpen,
-    photos,
   };
 };
 

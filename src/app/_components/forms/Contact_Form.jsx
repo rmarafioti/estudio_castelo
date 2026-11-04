@@ -86,7 +86,7 @@ export default function Contact_Form() {
         console.error("MESSAGE FAILED", error?.text);
         setMessageStatus("error");
         setIsLoading(false);
-      }
+      },
     );
   };
 

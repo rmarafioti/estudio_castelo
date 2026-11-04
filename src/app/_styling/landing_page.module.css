@@ -1,6 +1,6 @@
 .heroPhoto {
-    position: relative;
-    width: 100vw;
+  position: relative;
+  width: 100vw;
 }
 
 @media (max-width: 667px) {

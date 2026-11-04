@@ -29,7 +29,11 @@ export default function Responsive_Image_Layout({ photoData, className = "" }) {
   return (
     <picture>
       <source media="(max-width: 800px)" srcSet={mobileSrcSet} />
-      <img {...desktopProps} className={`${styles.image} ${className}`} />
+      <img
+        {...desktopProps}
+        alt={alt}
+        className={`${styles.image} ${className}`}
+      />
     </picture>
   );
 }
