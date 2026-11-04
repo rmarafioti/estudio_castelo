@@ -14,15 +14,18 @@ import pc from "../_styling/navbar.module.css";
 import mobile from "../_styling/mobile_nav.module.css";
 
 export default function Navbar() {
-  // The path the mobile menu was opened on. The menu is open only while the route is still that
-  // path, so navigating closes it without an effect.
-  const [menuOpenedOn, setMenuOpenedOn] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  const menuOpen = menuOpenedOn === pathname;
+  // The route the menu last rendered on. When the route changes, close the menu during render
+  // (React's pattern for resetting state on a prop change), so it never carries over to a page.
+  const [menuPathname, setMenuPathname] = useState(pathname);
+  if (menuPathname !== pathname) {
+    setMenuPathname(pathname);
+    setMenuOpen(false);
+  }
 
   const toggleMenu = () => {
-    setMenuOpenedOn(menuOpen ? null : pathname);
+    setMenuOpen(!menuOpen);
   };
 
   const links = [
