@@ -1,6 +1,8 @@
+// The pop-over viewer for the artwork gallery: one full image at a time, with previous, next
+// and close buttons, arrow-key navigation and the image's caption when it has one.
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 
@@ -12,6 +14,12 @@ import styles from "../_styling/gallery_modal.module.css";
 
 const MOBILE_BREAKPOINT = 667;
 
+// The portal needs document.body, so render nothing on the server and during hydration, then
+// render on the client. Nothing changes after that, so there is nothing to subscribe to.
+function subscribe() {
+  return () => {};
+}
+
 export default function Gallery_Modal({
   isOpen,
   closeModal,
@@ -20,11 +28,11 @@ export default function Gallery_Modal({
   currentImageObj,
 }) {
   const dialogRef = useRef(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -57,7 +65,7 @@ export default function Gallery_Modal({
       className={styles.modal}
       onCancel={handleCancel}
       onKeyDown={handleKeyDown}
-      aria-label={`Image viewer: ${currentImageObj.alt}`}
+      aria-label={`Image viewer: ${currentImageObj.altText}`}
     >
       <div className={styles.modalContent}>
         <div className={styles.section}>
@@ -75,7 +83,7 @@ export default function Gallery_Modal({
           <div className={styles.artwork_frame}>
             <Image
               src={currentImageObj.src}
-              alt={currentImageObj.alt}
+              alt={currentImageObj.altText}
               width={currentImageObj.width}
               height={currentImageObj.height}
               className={styles.photo}
@@ -102,6 +110,7 @@ export default function Gallery_Modal({
             </button>
           </div>
         </div>
+        {currentImageObj.caption && <p>{currentImageObj.caption}</p>}
       </div>
     </dialog>,
     document.body,
