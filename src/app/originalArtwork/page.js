@@ -10,7 +10,7 @@ import { getGallery } from "../_lib/getGallery";
 import styles from "../_styling/original_artwork.module.css";
 
 // The gallery's Gallery Code (slug) in the CMS dashboard.
-const GALLERY_CODE = "test-test-test";
+const GALLERY_CODE = "zfobc1lj";
 
 export const metadata = {
   title: "Original Artwork | Estudio Castelo",

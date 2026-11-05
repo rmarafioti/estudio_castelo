@@ -26,11 +26,11 @@ Production: this site runs on Vercel at `https://www.estudiocastelo.com`. The CM
 | CMS environment     | production only (`https://api.3dwebdev.com`); no local CMS testing                                       |
 | CMS media folder    | `estudiocastelo`: this site's upload folder in 3DWD's Cloudinary account, given by the CMS               |
 | Static image folder | `estudio_castelo`: the site's own images (`_data/photos.js`: hero, logo), in the same Cloudinary account |
-| CMS content used    | gallery, Gallery Code `test-test-test` → `/originalArtwork` (`GALLERY_CODE` in its `page.js`)            |
+| CMS content used    | gallery, Gallery Code `zfobc1lj` → `/originalArtwork` (`GALLERY_CODE` in its `page.js`)                  |
 | Gallery rendering   | full images only (crops unused); captions under the modal image when present; header text hardcoded      |
 | Pages               | `/` (hero), `/about`, `/originalArtwork` (CMS gallery); `/featureThree` is an unlinked placeholder       |
 
-The Gallery Code `test-test-test` is temporary: it can't be changed in 3DWD yet. When it can, update `GALLERY_CODE` and this table.
+The Gallery Code belongs to one gallery and never changes. If that gallery is deleted and a new one is made, the new gallery has a new code: update `GALLERY_CODE` and this table.
 
 ## Tech Stack Summary
 
@@ -289,11 +289,11 @@ When Rich says to commit, first update the Progress line below to describe the s
 
 ## Progress
 
-CMS gallery integration done (`feat/cms-gallery`, 4 November). Dependencies: Next.js and eslint-config-next 16.4.4 (supersedes Dependabot's 16.4.1 PR, which can be closed), plus `server-only`, Vitest and Prettier; production dependencies audit clean. `docs/client-website.md` copied unchanged from the pilot. `cmsFetch`, `getGallery` and the revalidate route come from the guide and are tested (16 tests). `/originalArtwork` is a static Server Component (1h fallback) that fetches gallery `test-test-test` and shows the 404 page when it's missing. The grid and modal live in the `Artwork_Gallery` client island with the original styling, and a caption shows unstyled under the modal image when present. The `originalArtwork` array was removed from `_data/photos.js`. `next/image` loads only from `3dwd/estudiocastelo/` and `estudio_castelo/`. Lint is clean: `Navbar.jsx` closes the mobile menu on every route change without an effect (reset during render when `usePathname()` changes; a fix on `fix/navbar-menu-default-closed` stops it reopening on a return to the page it was opened on), `Responsive_Image_Layout.jsx` passes `alt` explicitly, and ESLint ignores the scaffold `forms/` folder. The whole repo is Prettier-formatted.
+CMS gallery integration done (`feat/cms-gallery`, 4 November). Dependencies: Next.js and eslint-config-next 16.4.4 (supersedes Dependabot's 16.4.1 PR, which can be closed), plus `server-only`, Vitest and Prettier; production dependencies audit clean. `docs/client-website.md` copied unchanged from the pilot. `cmsFetch`, `getGallery` and the revalidate route come from the guide and are tested (16 tests). `/originalArtwork` is a static Server Component (1h fallback) that fetches gallery `zfobc1lj` and shows the 404 page when it's missing. The grid and modal live in the `Artwork_Gallery` client island with the original styling, and a caption shows unstyled under the modal image when present. The `originalArtwork` array was removed from `_data/photos.js`. `next/image` loads only from `3dwd/estudiocastelo/` and `estudio_castelo/`. Lint is clean: `Navbar.jsx` closes the mobile menu on every route change without an effect (reset during render when `usePathname()` changes, and it stays closed on a return to the page it was opened on, PR #3), `Responsive_Image_Layout.jsx` passes `alt` explicitly, and ESLint ignores the scaffold `forms/` folder. The whole repo is Prettier-formatted.
 
 Tested against the production CMS before merging: the gallery prerenders 12 images, `next/image` refuses other folders, and the local revalidate route returns 401 for a missing or wrong secret and 200 for the right one. `https://www.estudiocastelo.com` serves with no redirect (the bare domain 308s to www). The three `HEADLESS_CMS_*` vars are set on Vercel (`estudio-castelo`) with production's key and secret. No CMS test content was created.
 
-Live checks after the merge: `/originalArtwork` serves the 12 gallery images and a wrong-secret `POST https://www.estudiocastelo.com/api/revalidate` returns 401. Still to do: edit the gallery in the dashboard and confirm it shows after one refresh. When the Gallery Code can be renamed in 3DWD, update `GALLERY_CODE` and Site Details.
+Live checks after the merge: `/originalArtwork` serves the 12 gallery images and a wrong-secret `POST https://www.estudiocastelo.com/api/revalidate` returns 401. The original gallery (`test-test-test`) was deleted by accident on 5 November and replaced with a new gallery, Gallery Code `zfobc1lj` (`fix/gallery-code-zfobc1lj`): it prerendered 12 images in a local production build. Still to do: after the merge, confirm the live `/originalArtwork` shows the new gallery; then edit the gallery in the dashboard and confirm the change shows after one refresh.
 
 ## Plan Authoring
 
