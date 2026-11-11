@@ -2,7 +2,7 @@
 
 The website for Estudio Castelo, the art studio of Felipe de Sousa: `https://www.estudiocastelo.com`.
 
-A static Next.js site. The Original Artwork gallery is managed by the site owner in the 3D Web Dev Headless CMS and fetched at build/regeneration time; everything else lives in this repo. The CMS connection is specced in [docs/client-website.md](docs/client-website.md), and project conventions are in [CLAUDE.md](CLAUDE.md).
+A static Next.js site. The Original Artwork gallery is managed by the site owner in the 3D Web Dev Headless CMS and fetched at build/regeneration time; everything else lives in this repo. The CMS connection is specced in [docs/cms/](docs/cms/), synced from the client-kit repo, with this site's specifics in [docs/site.md](docs/site.md), and project conventions are in [CLAUDE.md](CLAUDE.md).
 
 ## Local setup
 
