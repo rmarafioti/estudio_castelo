@@ -45,7 +45,7 @@ root
 │       │   ├── Fade_In_Section.jsx    *client: fades its children in when visible
 │       │   ├── Responsive_Image_Layout.jsx *the hero's <picture> with desktop and mobile sources
 │       │   ├── Scroll_To_top.jsx      *resets scroll position on route change
-│       │   └── forms/                 *scaffold: Contact_Form.jsx + Form_Modal.jsx (EmailJS), not used on any page yet
+│       │   └── forms/                 *scaffold: Contact_Form.jsx + Form_Modal.jsx (EmailJS), not used on any page yet; Contact_Form.test.jsx
 │       ├── _data/
 │       │   └── photos.js              *the site's own images (heroPhoto, siteLogo), in the estudio_castelo Cloudinary folder
 │       ├── _hooks/                    *client-only UI hooks, never CMS data (usePhotoGallery, useModal, useVisibility)
@@ -231,15 +231,16 @@ Findings as a list, most important first. Each has: file and line, checklist ite
 
 ## Unit Tests
 
-Vitest, node environment. `npm test` runs the suite once; `npm run test:watch` while working. A failing test blocks a commit the same as a failing build.
+Vitest, node environment (the contact form test opts into jsdom with a `// @vitest-environment jsdom` comment, using `@testing-library/react`). `npm test` runs the suite once; `npm run test:watch` while working. A failing test blocks a commit the same as a failing build.
 
 ### What is tested
 
-The CMS boundary, where a mistake breaks the site silently or leaks a secret:
+The CMS boundary, where a mistake breaks the site silently or leaks a secret, plus the scaffold contact form:
 
 - **`cmsFetch()`:** returns empty when `HEADLESS_CMS_API_URL` is unset, without calling fetch; sends `GET {url}{path}` with `Authorization: Bearer <key>`; passes `next: { tags: ["cms", tag], revalidate: 3600 }`; returns the unwrapped data; returns the `notFound` value on a `404` when one is given, and throws on a `404` when none is; throws on a non-2xx response (`401`, `429`, `500`).
 - **Each `getX()`:** its wiring: the path, its tag, its empty value (and `getGallery`'s `notFound` value).
 - **The revalidate route:** `401` with the documented body for a missing header, a wrong secret, and an unset `HEADLESS_CMS_WEBHOOK_SECRET`; `200` and the cms tag expired for the right secret. For the unset-secret case, send a full `Bearer <secret>`, not `"Bearer "` with nothing after it: header values are trimmed, so it arrives as `"Bearer"` and fails on length alone, and the test would pass even with the guard deleted.
+- **The contact form (`Contact_Form.test.jsx`):** after a successful EmailJS send the success modal shows "Message Sent!" (issue #8: the modal used to crash); a failed send shows the failure message and no modal.
 - **A bug that was fixed:** write the failing test first, then fix the code, so it can't come back.
 
 Don't write a test for: static markup, styling, metadata, a constant, or Next.js behaviour itself. Rendering is checked by hand (see Manual testing).
@@ -250,10 +251,10 @@ Don't write a test for: static markup, styling, metadata, a constant, or Next.js
 - **Arrange → Act → Assert,** separated by a blank line. One behaviour per test.
 - **Test behaviour, not implementation:** assert on what was sent to the CMS (URL, headers, next options) and what came back, or on the route's response, never on internals.
 - **Mock only the edges:**
-  - The network, through `mockFetch` in `src/test/helpers.js`, which replaces the global fetch. No test calls the real CMS.
+  - The network, through `mockFetch` in `src/test/helpers.js`, which replaces the global fetch. No test calls the real CMS or EmailJS (EmailJS sends with fetch, so `mockFetch` covers it).
   - `revalidateTag` from `next/cache` (`vi.mock`), to assert which tag was expired.
   - `server-only`, stubbed in `src/test/setup.js`, because it throws outside a Next.js server build.
-  - Env vars with `vi.stubEnv`, never real values. The real API key and webhook secret never appear in a test.
+  - Env vars with `vi.stubEnv`, never real values. The real API key and webhook secret never appear in a test; the contact form test stubs the three `NEXT_PUBLIC_EMAILJS_*` vars with fake values.
   - Nothing else in our own code is mocked.
 - **Responses come from the contract:** mock bodies use the shapes and messages in `docs/cms/`, copied word for word.
 - **Independent:** mocks and stubbed env vars reset after each test (`vitest.config.mjs`). Tests pass in any order and alone.
@@ -288,9 +289,11 @@ When Rich says to commit, first update the Progress line below to describe the s
 
 ## Progress
 
-Moved to the shared client-kit docs on 11 November (backend `docs/deploy.md` → Onboarding, path B step 4): the old `docs/client-website.md` is gone; the CMS docs are `docs/cms/` (`client-website.md`, `galleries.md`, `posts.md`), synced from client-kit (first sync PR #5) and never edited here, and this site's specifics are in `docs/site.md`. CI (`.github/workflows/ci.yml`, copied from client-kit's `templates/ci.yml`) runs `cms` (drift against client-kit's main, and sync PRs touch only `docs/cms/`) and `check` (Node 24, lint, test). Every snippet in `docs/cms/` that this site uses (`cmsFetch`, `getGallery`) matches its file. Next for Rich (path B steps 5 and 6): in the repo's settings, allow auto-merge and auto-delete head branches, and add a branch ruleset on main requiring `cms` and `check`; on the Vercel project, set the Ignored Build Step to `git diff --quiet HEAD^ HEAD -- . ':(exclude)docs'`; then ask the backend session to turn on auto-merge for this repo in client-kit.
+Moved to the shared client-kit docs on 11 November (backend `docs/deploy.md` → Onboarding, path B step 4): the old `docs/client-website.md` is gone; the CMS docs are `docs/cms/` (`client-website.md`, `galleries.md`, `posts.md`), synced from client-kit (first sync PR #5) and never edited here, and this site's specifics are in `docs/site.md`. CI (`.github/workflows/ci.yml`, copied from client-kit's `templates/ci.yml`) runs `cms` (drift against client-kit's main, and sync PRs touch only `docs/cms/`) and `check` (Node 24, lint, test). Every snippet in `docs/cms/` that this site uses (`cmsFetch`, `getGallery`) matches its file. Onboarding done (path B steps 5 and 6 complete, 11 November): auto-merge and auto-delete head branches allowed, a ruleset on main requires `cms` and `check`, the Vercel Ignored Build Step skips docs-only changes, and client-kit has auto-merge on for this repo. Still to confirm: the next client-kit `docs/cms/` change opens a sync PR here that merges itself on green CI.
 
-CMS gallery integration done (`feat/cms-gallery`, 4 November). Dependencies: Next.js and eslint-config-next 16.4.4 (supersedes Dependabot's 16.4.1 PR, which can be closed), plus `server-only`, Vitest and Prettier; production dependencies audit clean. `cmsFetch`, `getGallery` and the revalidate route come from the client guide (now `docs/cms/`) and are tested (16 tests). `/originalArtwork` is a static Server Component (1h fallback) that fetches gallery `zfobc1lj` and shows the 404 page when it's missing. The grid and modal live in the `Artwork_Gallery` client island with the original styling, and a caption shows unstyled under the modal image when present. The `originalArtwork` array was removed from `_data/photos.js`. `next/image` loads only from `3dwd/estudiocastelo/` and `estudio_castelo/`. Lint is clean: `Navbar.jsx` closes the mobile menu on every route change without an effect (reset during render when `usePathname()` changes, and it stays closed on a return to the page it was opened on, PR #3), `Responsive_Image_Layout.jsx` passes `alt` explicitly, and ESLint ignores the scaffold `forms/` folder. The whole repo is Prettier-formatted.
+Next.js and eslint-config-next upgraded to 16.4.6 on 18 November (16.4.5 carries security fixes, one of them for `next/image`; Dependabot's PR #7 had taken `next` to 16.4.5); `revalidateTag("cms", { expire: 0 })` is unchanged and `/originalArtwork` still builds ○. Issue #8 fixed: the scaffold contact form's success modal rendered an `<Image>` of an undefined `formPhoto` and would have crashed after a send (never in production: the form isn't on any page); the image is removed (its `.form_photo` CSS is left for Rich), and `Contact_Form.test.jsx` (jsdom, Testing Library, network mocked with `mockFetch`) checks the modal after a send and the failure message. 18 tests.
+
+CMS gallery integration done (`feat/cms-gallery`, 4 November). Dependencies: Next.js and eslint-config-next 16.4.4 (since upgraded, see above), plus `server-only`, Vitest and Prettier; production dependencies audit clean. `cmsFetch`, `getGallery` and the revalidate route come from the client guide (now `docs/cms/`) and are tested (16 tests). `/originalArtwork` is a static Server Component (1h fallback) that fetches gallery `zfobc1lj` and shows the 404 page when it's missing. The grid and modal live in the `Artwork_Gallery` client island with the original styling, and a caption shows unstyled under the modal image when present. The `originalArtwork` array was removed from `_data/photos.js`. `next/image` loads only from `3dwd/estudiocastelo/` and `estudio_castelo/`. Lint is clean: `Navbar.jsx` closes the mobile menu on every route change without an effect (reset during render when `usePathname()` changes, and it stays closed on a return to the page it was opened on, PR #3), `Responsive_Image_Layout.jsx` passes `alt` explicitly, and ESLint ignores the scaffold `forms/` folder. The whole repo is Prettier-formatted.
 
 Tested against the production CMS before merging: the gallery prerenders 12 images, `next/image` refuses other folders, and the local revalidate route returns 401 for a missing or wrong secret and 200 for the right one. `https://www.estudiocastelo.com` serves with no redirect (the bare domain 308s to www). The three `HEADLESS_CMS_*` vars are set on Vercel (`estudio-castelo`) with production's key and secret. No CMS test content was created.
 
