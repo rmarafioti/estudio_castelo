@@ -1,5 +1,5 @@
 // Shared test helpers for the edges of the app. mockFetch is the only fake network: no test
-// calls the real CMS.
+// calls the real CMS or EmailJS.
 import { vi } from "vitest";
 
 // Replaces the global fetch with a mock that resolves to a JSON response, and returns the mock
